@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import logo from "@/assets/ragnacore-logo.png";
 
 const links = [
   { to: "/", label: "Home" },
@@ -19,8 +20,8 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 glass">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between h-16 md:h-20">
-          <Link to="/" className="font-display text-xl md:text-2xl font-bold text-gradient">
-            RagnaCore
+          <Link to="/" className="flex items-center">
+            <img src={logo} alt="RagnaCore" className="h-8 md:h-10" />
           </Link>
 
           {/* Desktop */}
