@@ -49,7 +49,7 @@ const Index = () => (
             Tecnologia que <span className="text-gradient">transforma</span> o seu negócio
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl">
-            Soluções tecnológicas completas — websites, redes, segurança e muito mais. A RagnaCor é o parceiro ideal para a sua transformação digital.
+            Soluções tecnológicas completas — websites, redes, segurança e muito mais. A RagnaCore é o parceiro ideal para a sua transformação digital.
           </p>
           <div className="flex flex-wrap gap-4">
             <a
@@ -111,10 +111,10 @@ const Index = () => (
         <div className="max-w-3xl mx-auto text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <h2 className="font-display text-3xl md:text-4xl font-bold mb-6">
-              Quem é a <span className="text-gradient">RagnaCor</span>?
+              Quem é a <span className="text-gradient">RagnaCore</span>?
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-8">
-              Somos uma empresa de tecnologia focada em entregar soluções inovadoras e acessíveis. Desde a criação de websites até a instalação de sistemas de segurança, a RagnaCor é sinónimo de confiança e excelência técnica.
+              Somos uma empresa de tecnologia focada em entregar soluções inovadoras e acessíveis. Desde a criação de websites até a instalação de sistemas de segurança, a RagnaCore é sinónimo de confiança e excelência técnica.
             </p>
             <Link
               to="/sobre"

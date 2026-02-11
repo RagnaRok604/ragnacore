@@ -104,8 +104,8 @@ const Contact = () => {
               <div>
                 <h3 className="font-display text-xl font-semibold text-foreground mb-4">Informações de Contacto</h3>
                 <div className="space-y-4 text-sm text-muted-foreground">
-                  <a href="mailto:info@ragnacor.com" className="flex items-center gap-3 hover:text-primary transition-colors">
-                    <Mail size={20} className="text-primary" /> info@ragnacor.com
+                  <a href="mailto:info@ragnacore.com" className="flex items-center gap-3 hover:text-primary transition-colors">
+                    <Mail size={20} className="text-primary" /> info@ragnacore.com
                   </a>
                   <a href="tel:+244999999999" className="flex items-center gap-3 hover:text-primary transition-colors">
                     <Phone size={20} className="text-primary" /> +244 999 999 999

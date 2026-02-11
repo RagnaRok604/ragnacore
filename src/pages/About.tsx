@@ -28,7 +28,7 @@ const About = () => (
       <div className="container mx-auto px-4 md:px-6 text-center">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
           <h1 className="font-display text-4xl md:text-5xl font-bold mb-4">
-            Sobre a <span className="text-gradient">RagnaCor</span>
+            Sobre a <span className="text-gradient">RagnaCore</span>
           </h1>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Conheça a nossa história, missão e os valores que nos impulsionam todos os dias.
@@ -44,13 +44,13 @@ const About = () => (
           <SectionHeading title="A Nossa História" center={false} />
           <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              A RagnaCor nasceu da paixão pela tecnologia e da vontade de tornar soluções digitais acessíveis a empresas de todos os portes. Desde o início, a nossa missão foi clara: entregar resultados que fazem a diferença.
+              A RagnaCore nasceu da paixão pela tecnologia e da vontade de tornar soluções digitais acessíveis a empresas de todos os portes. Desde o início, a nossa missão foi clara: entregar resultados que fazem a diferença.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-4">
               Com uma equipa dedicada de profissionais experientes, crescemos ao lado dos nossos clientes, ajudando-os a enfrentar os desafios da transformação digital com confiança e segurança.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              Hoje, a RagnaCor é sinónimo de inovação, qualidade e compromisso. Continuamos a expandir os nossos serviços para oferecer as melhores soluções tecnológicas do mercado.
+              Hoje, a RagnaCore é sinónimo de inovação, qualidade e compromisso. Continuamos a expandir os nossos serviços para oferecer as melhores soluções tecnológicas do mercado.
             </p>
           </motion.div>
         </div>
