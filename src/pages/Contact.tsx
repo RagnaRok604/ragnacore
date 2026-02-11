@@ -108,10 +108,10 @@ const Contact = () => {
                     <Mail size={20} className="text-primary" /> info@ragnacore.com
                   </a>
                   <a href="tel:+244999999999" className="flex items-center gap-3 hover:text-primary transition-colors">
-                    <Phone size={20} className="text-primary" /> +244 999 999 999
+                    <Phone size={20} className="text-primary" /> +258 860033620
                   </a>
                   <span className="flex items-center gap-3">
-                    <MapPin size={20} className="text-primary" /> Luanda, Angola
+                    <MapPin size={20} className="text-primary" /> Maputo, Mocambique
                   </span>
                 </div>
               </div>
