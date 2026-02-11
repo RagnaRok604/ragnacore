@@ -17,7 +17,7 @@ const Navbar = () => {
   const location = useLocation();
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 glass">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between h-16 md:h-20">
           <Link to="/" className="flex items-center">
@@ -65,7 +65,7 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden glass border-t border-border overflow-hidden"
+            className="md:hidden bg-white border-t border-border overflow-hidden"
           >
             <div className="container mx-auto px-4 py-4 flex flex-col gap-3">
               {links.map((l) => (
