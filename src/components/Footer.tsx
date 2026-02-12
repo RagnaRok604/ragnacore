@@ -37,11 +37,11 @@ const Footer = () => (
              <a href="mailto:info@ragnacore.com" className="flex items-center gap-2 hover:text-primary transition-colors">
                <Mail size={16} /> info@ragnacore.com
             </a>
-            <a href="tel:+244999999999" className="flex items-center gap-2 hover:text-primary transition-colors">
-              <Phone size={16} /> +244 999 999 999
+            <a href="tel:+258860033620" className="flex items-center gap-2 hover:text-primary transition-colors">
+              <Phone size={16} /> +258 860033620
             </a>
             <span className="flex items-center gap-2">
-              <MapPin size={16} /> Luanda, Angola
+              <MapPin size={16} /> Maputo, Moçambique
             </span>
           </div>
         </div>
