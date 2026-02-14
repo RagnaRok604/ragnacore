@@ -2,13 +2,27 @@ import { motion } from "framer-motion";
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
 
+import imgWebsite from "@/assets/project-website.jpg";
+import imgNetwork from "@/assets/project-network.jpg";
+import imgSecurity from "@/assets/project-security.jpg";
+import imgEcommerce from "@/assets/project-ecommerce.jpg";
+import imgInternet from "@/assets/project-internet.jpg";
+import imgAlarm from "@/assets/project-alarm.jpg";
+
 const projects = [
-  { title: "Website Corporativo - Loja XYZ", category: "Website", desc: "Site institucional moderno com catálogo de produtos online." },
-  { title: "Rede Call Center - Empresa ABC", category: "Redes", desc: "Infraestrutura de rede para 50 posições de atendimento." },
-  { title: "Sistema CCTV - Residência Premium", category: "Segurança", desc: "Instalação de 16 câmeras HD com monitorização remota." },
-  { title: "E-Commerce - Boutique Fashion", category: "Website", desc: "Loja online responsiva com integração de pagamentos." },
-  { title: "Internet Comunitária - Bairro Solar", category: "Internet", desc: "Distribuição de internet para 200 residências." },
-  { title: "Segurança Empresarial - Escritórios MOV", category: "Segurança", desc: "Sistema integrado de alarmes e controlo de acesso." },
+  { title: "Website Corporativo - Loja XYZ", category: "Website", desc: "Site institucional moderno com catálogo de produtos online.", image: imgWebsite },
+  { title: "Rede Call Center - Empresa ABC", category: "Redes", desc: "Infraestrutura de rede para 50 posições de atendimento.", image: imgNetwork },
+  { title: "Sistema CCTV - Residência Premium", category: "Segurança", desc: "Instalação de 16 câmeras HD com monitorização remota.", image: imgSecurity },
+  { title: "E-Commerce - Boutique Fashion", category: "Website", desc: "Loja online responsiva com integração de pagamentos.", image: imgEcommerce },
+  { title: "Internet Comunitária - Bairro Solar", category: "Internet", desc: "Distribuição de internet para 200 residências.", image: imgInternet },
+  { title: "Segurança Empresarial - Escritórios MOV", category: "Segurança", desc: "Sistema integrado de alarmes e controlo de acesso.", image: imgAlarm },
+];
+
+const partners = [
+  { name: "TP-LINK", color: "hsl(195, 90%, 35%)" },
+  { name: "MikroTik", color: "hsl(210, 80%, 35%)" },
+  { name: "TVCABO", color: "hsl(0, 75%, 45%)" },
+  { name: "Gest Internet", color: "hsl(145, 60%, 35%)" },
 ];
 
 const Projects = () => (
@@ -36,17 +50,58 @@ const Projects = () => (
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
-              className="bg-gradient-card border border-border rounded-xl overflow-hidden group hover:shadow-glow transition-shadow"
+              className="bg-card border border-border rounded-xl overflow-hidden group hover:shadow-glow transition-shadow shadow-card"
             >
-              <div className="h-48 bg-secondary/50 flex items-center justify-center">
-                <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">
-                  {p.category}
-                </span>
+              <div className="h-48 overflow-hidden">
+                <img
+                  src={p.image}
+                  alt={p.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
               </div>
               <div className="p-6">
+                <span className="text-xs font-semibold uppercase tracking-widest text-primary mb-2 inline-block">
+                  {p.category}
+                </span>
                 <h3 className="font-display font-semibold text-foreground mb-2">{p.title}</h3>
                 <p className="text-sm text-muted-foreground">{p.desc}</p>
               </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* Partners */}
+    <section className="py-16 md:py-20 border-t border-border">
+      <div className="container mx-auto px-4 md:px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-10"
+        >
+          <h2 className="font-display text-2xl md:text-3xl font-bold mb-2">
+            Empresas <span className="text-gradient">Parceiras</span>
+          </h2>
+          <p className="text-muted-foreground text-sm">Trabalhamos com as melhores marcas do mercado</p>
+        </motion.div>
+        <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16">
+          {partners.map((partner, i) => (
+            <motion.div
+              key={partner.name}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className="flex items-center justify-center px-6 py-4 rounded-xl border border-border bg-card shadow-card hover:shadow-glow transition-shadow"
+            >
+              <span
+                className="text-xl md:text-2xl font-bold font-display tracking-tight"
+                style={{ color: partner.color }}
+              >
+                {partner.name}
+              </span>
             </motion.div>
           ))}
         </div>
