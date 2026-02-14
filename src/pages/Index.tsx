@@ -1,18 +1,11 @@
 import { motion } from "framer-motion";
-import { Globe, Shield, Wifi, Camera, Server, ArrowRight, Award, Headphones, Zap, CheckCircle } from "lucide-react";
+import { Award, Headphones, Zap, CheckCircle, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
+import ServicesCarousel from "@/components/ServicesCarousel";
+import PartnersSection from "@/components/PartnersSection";
 import heroBg from "@/assets/hero-bg.jpg";
-
-const services = [
-  { icon: Globe, title: "Websites Profissionais", desc: "Criação de sites modernos e responsivos" },
-  { icon: Server, title: "Domínio & Hospedagem", desc: "Registo de domínios e alojamento seguro" },
-  { icon: Wifi, title: "Redes & Call Center", desc: "Instalação e configuração de infraestruturas" },
-  { icon: Wifi, title: "Internet Residencial", desc: "Venda e instalação de internet fiável" },
-  { icon: Camera, title: "Segurança Eletrónica", desc: "Câmeras, alarmes e sistemas completos" },
-  { icon: Shield, title: "Suporte Dedicado", desc: "Assistência técnica contínua e dedicada" },
-];
 
 const differentials = [
   { icon: Award, title: "Qualidade", desc: "Padrões elevados em cada projeto" },
@@ -53,7 +46,7 @@ const Index = () => (
           </p>
           <div className="flex flex-wrap gap-4">
             <a
-              href="https://wa.me/244999999999?text=Olá!%20Gostaria%20de%20saber%20mais."
+              href="https://wa.me/258860033620?text=Olá!%20Gostaria%20de%20saber%20mais."
               target="_blank"
               rel="noopener noreferrer"
               className="bg-gradient-primary text-primary-foreground px-8 py-3.5 rounded-lg font-semibold hover:opacity-90 transition-opacity shadow-glow"
@@ -71,39 +64,8 @@ const Index = () => (
       </div>
     </section>
 
-    {/* Services Highlight */}
-    <section className="py-20 md:py-28">
-      <div className="container mx-auto px-4 md:px-6">
-        <SectionHeading title="Nossos Serviços" subtitle="Oferecemos soluções tecnológicas completas para empresas e residências" />
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((s, i) => (
-            <motion.div
-              key={s.title}
-              custom={i}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeUp}
-              className="bg-gradient-card border border-border rounded-xl p-6 hover:shadow-glow transition-shadow group"
-            >
-              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                <s.icon size={24} className="text-primary" />
-              </div>
-              <h3 className="font-display font-semibold text-foreground mb-2">{s.title}</h3>
-              <p className="text-sm text-muted-foreground">{s.desc}</p>
-            </motion.div>
-          ))}
-        </div>
-        <div className="text-center mt-10">
-          <Link
-            to="/servicos"
-            className="text-primary font-semibold text-sm hover:underline inline-flex items-center gap-1"
-          >
-            Ver todos os serviços <ArrowRight size={16} />
-          </Link>
-        </div>
-      </div>
-    </section>
+    {/* Services Carousel */}
+    <ServicesCarousel />
 
     {/* About Preview */}
     <section className="py-20 md:py-28 bg-card/50">
@@ -164,7 +126,7 @@ const Index = () => (
             Entre em contacto connosco e descubra como a tecnologia pode impulsionar o seu negócio.
           </p>
           <a
-            href="https://wa.me/244999999999?text=Olá!%20Gostaria%20de%20um%20orçamento."
+            href="https://wa.me/258860033620?text=Olá!%20Gostaria%20de%20um%20orçamento."
             target="_blank"
             rel="noopener noreferrer"
             className="bg-gradient-primary text-primary-foreground px-8 py-3.5 rounded-lg font-semibold hover:opacity-90 transition-opacity shadow-glow inline-block"
@@ -174,6 +136,9 @@ const Index = () => (
         </motion.div>
       </div>
     </section>
+
+    {/* Partners */}
+    <PartnersSection />
   </Layout>
 );
 
