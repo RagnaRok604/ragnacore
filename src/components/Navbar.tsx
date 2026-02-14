@@ -53,7 +53,7 @@ const Navbar = () => {
             className="md:hidden text-foreground p-2"
             aria-label="Menu"
           >
-            {open ? <X size={24} /> : <Menu size={24} />}
+            {open ? <X size={24} className="text-foreground" /> : <Menu size={24} className="text-foreground" />}
           </button>
         </div>
       </div>
