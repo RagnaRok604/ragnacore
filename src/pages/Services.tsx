@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Globe, Server, Wifi, Camera, Shield, CheckCircle } from "lucide-react";
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
+import PartnersSection from "@/components/PartnersSection";
 
 const services = [
   {
@@ -99,6 +100,8 @@ const Services = () => (
         </a>
       </div>
     </section>
+
+    <PartnersSection />
   </Layout>
 );
 
