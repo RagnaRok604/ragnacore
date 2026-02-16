@@ -17,102 +17,98 @@ import imgSecurity from "@/assets/project-security.jpg";
 import imgEcommerce from "@/assets/project-ecommerce.jpg";
 import imgInternet from "@/assets/project-internet.jpg";
 
-const carouselServices = [
+const carouselSlides = [
   {
     icon: Globe,
-    title: "Websites Profissionais",
-    desc: "Criação de sites modernos, responsivos e otimizados para converter visitantes em clientes.",
+    title: "Criação de",
+    highlight: "Websites",
+    desc: "Criamos websites modernos e responsivos para o seu negócio, com as melhores tecnologias do mercado.",
     image: imgWebsite,
   },
   {
+    icon: Wifi,
+    title: "Infraestrutura de",
+    highlight: "Redes",
+    desc: "Instalação e configuração profissional de infraestruturas de rede, call centers e soluções empresariais.",
+    image: imgNetwork,
+  },
+  {
+    icon: Camera,
+    title: "Segurança",
+    highlight: "Eletrónica",
+    desc: "Sistemas de câmeras HD, alarmes inteligentes e monitorização remota para a sua tranquilidade.",
+    image: imgSecurity,
+  },
+  {
     icon: Server,
-    title: "Domínio & Hospedagem",
-    desc: "Registo de domínios e alojamento seguro com uptime de 99.9% e certificado SSL.",
+    title: "Domínio &",
+    highlight: "Hospedagem",
+    desc: "Registo de domínios e alojamento seguro com uptime de 99.9% e certificado SSL incluído.",
     image: imgEcommerce,
   },
   {
     icon: Wifi,
-    title: "Redes & Call Center",
-    desc: "Instalação e configuração de infraestruturas de rede e ambientes de call center.",
-    image: imgNetwork,
-  },
-  {
-    icon: Wifi,
-    title: "Internet Residencial",
-    desc: "Soluções de internet fiável com instalação profissional e planos flexíveis.",
+    title: "Internet",
+    highlight: "Residencial",
+    desc: "Soluções de internet fiável com instalação profissional e planos flexíveis para a sua casa.",
     image: imgInternet,
-  },
-  {
-    icon: Camera,
-    title: "Segurança Eletrónica",
-    desc: "Câmeras HD, alarmes inteligentes e monitorização remota via aplicação.",
-    image: imgSecurity,
   },
 ];
 
 const ServicesCarousel = () => {
   const autoplayPlugin = useRef(
-    Autoplay({ delay: 4000, stopOnInteraction: true })
+    Autoplay({ delay: 5000, stopOnInteraction: true })
   );
 
   return (
-    <section className="py-20 md:py-28 bg-card/30">
-      <div className="container mx-auto px-4 md:px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-12"
-        >
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-3">
-            O que <span className="text-gradient">fazemos</span>
-          </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Conheça os serviços que tornam a RagnaCore o parceiro tecnológico ideal
-          </p>
-        </motion.div>
-
-        <Carousel
-          opts={{ align: "start", loop: true }}
-          plugins={[autoplayPlugin.current]}
-          className="w-full max-w-5xl mx-auto"
-        >
-          <CarouselContent className="-ml-4">
-            {carouselServices.map((s) => (
-              <CarouselItem key={s.title} className="pl-4 md:basis-1/2 lg:basis-1/3">
-                <div className="bg-card border border-border rounded-xl overflow-hidden h-full group hover:shadow-glow transition-shadow shadow-card">
-                  <div className="h-44 overflow-hidden relative">
-                    <img
-                      src={s.image}
-                      alt={s.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                    <div className="absolute bottom-3 left-3 w-10 h-10 rounded-lg bg-primary/90 flex items-center justify-center">
-                      <s.icon size={20} className="text-primary-foreground" />
+    <section className="relative">
+      <Carousel
+        opts={{ align: "start", loop: true }}
+        plugins={[autoplayPlugin.current]}
+        className="w-full"
+      >
+        <CarouselContent className="ml-0">
+          {carouselSlides.map((s) => (
+            <CarouselItem key={s.title} className="pl-0 basis-full">
+              <div className="relative h-[70vh] md:h-[80vh] flex items-center">
+                <img
+                  src={s.image}
+                  alt={s.title}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-foreground/70" />
+                <div className="container mx-auto px-4 md:px-6 relative z-10">
+                  <div className="max-w-2xl">
+                    <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+                      {s.title}{" "}
+                      <span className="text-primary">{s.highlight}</span>
+                    </h1>
+                    <p className="text-white/80 text-lg md:text-xl mb-8 max-w-lg">
+                      {s.desc}
+                    </p>
+                    <div className="flex flex-wrap gap-3">
+                      <Link
+                        to="/servicos"
+                        className="bg-primary text-primary-foreground px-7 py-3 rounded font-bold text-sm hover:bg-accent transition-colors"
+                      >
+                        Saiba mais
+                      </Link>
+                      <Link
+                        to="/contactos"
+                        className="border-2 border-white/40 text-white px-7 py-3 rounded font-bold text-sm hover:border-primary hover:text-primary transition-colors"
+                      >
+                        Contacte-nos
+                      </Link>
                     </div>
                   </div>
-                  <div className="p-5">
-                    <h3 className="font-display font-semibold text-foreground mb-2">{s.title}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
-                  </div>
                 </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious className="hidden md:flex -left-12" />
-          <CarouselNext className="hidden md:flex -right-12" />
-        </Carousel>
-
-        <div className="text-center mt-10">
-          <Link
-            to="/servicos"
-            className="inline-flex items-center gap-2 bg-gradient-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity shadow-glow"
-          >
-            Ver Todos os Serviços <ArrowRight size={18} />
-          </Link>
-        </div>
-      </div>
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious className="left-4 md:left-8 bg-white/10 border-white/20 text-white hover:bg-primary hover:border-primary hover:text-white h-12 w-12" />
+        <CarouselNext className="right-4 md:right-8 bg-white/10 border-white/20 text-white hover:bg-primary hover:border-primary hover:text-white h-12 w-12" />
+      </Carousel>
     </section>
   );
 };
