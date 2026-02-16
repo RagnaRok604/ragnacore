@@ -1,23 +1,28 @@
 import { motion } from "framer-motion";
-import { Award, Headphones, Zap, CheckCircle, ArrowRight, Users } from "lucide-react";
+import { Globe, Server, Wifi, Camera, Shield, Award, Headphones, Zap, CheckCircle, ArrowRight, Users, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import ServicesCarousel from "@/components/ServicesCarousel";
 import PartnersSection from "@/components/PartnersSection";
-import heroBg from "@/assets/hero-bg.jpg";
 
-const differentials = [
-  { icon: Award, title: "Qualidade", desc: "Padrões elevados em cada projeto que entregamos" },
-  { icon: Headphones, title: "Suporte 24/7", desc: "Estamos sempre disponíveis quando precisa de nós" },
-  { icon: Zap, title: "Experiência", desc: "Anos de mercado e dezenas de projetos entregues" },
-  { icon: CheckCircle, title: "Soluções Completas", desc: "Do planeamento à execução, tudo num só lugar" },
+import imgWebsite from "@/assets/project-website.jpg";
+import imgNetwork from "@/assets/project-network.jpg";
+import imgSecurity from "@/assets/project-security.jpg";
+
+const services = [
+  { icon: Globe, title: "Criação de Websites", desc: "Criamos websites para sua empresa, desde sites simples até plataformas complexas com as melhores tecnologias." },
+  { icon: Wifi, title: "Telecomunicações", desc: "Trabalhamos com redes FTTX, Ethernet, configuração de routers MikroTik e muito mais." },
+  { icon: Server, title: "Domínio & Hospedagem", desc: "Registo de domínios e alojamento seguro com uptime de 99.9% e certificado SSL incluído." },
+  { icon: Camera, title: "Segurança Eletrónica", desc: "Câmeras HD, alarmes inteligentes e monitorização remota via aplicação móvel." },
 ];
 
-const stats = [
-  { value: "50+", label: "Projetos Entregues" },
-  { value: "99.9%", label: "Uptime Garantido" },
-  { value: "24/7", label: "Suporte Técnico" },
-  { value: "4+", label: "Anos de Experiência" },
+const mainServices = [
+  { icon: Shield, title: "Segurança de Redes", desc: "Proteção avançada para a sua infraestrutura de rede com firewalls e monitorização contínua." },
+  { icon: Globe, title: "Criação de Websites", desc: "Desenvolvemos websites responsivos e modernos com as melhores práticas de UX/UI." },
+  { icon: Server, title: "Hospedagem Web", desc: "Alojamento fiável e seguro para o seu website com suporte técnico dedicado." },
+  { icon: Wifi, title: "Internet Residencial", desc: "Soluções de internet fiável com instalação profissional e planos flexíveis." },
+  { icon: Headphones, title: "Suporte Técnico", desc: "Assistência técnica especializada para manter os seus sistemas sempre operacionais." },
+  { icon: Camera, title: "Videovigilância", desc: "Sistemas CCTV profissionais com câmeras HD e acesso remoto via smartphone." },
 ];
 
 const fadeUp = {
@@ -31,74 +36,139 @@ const fadeUp = {
 
 const Index = () => (
   <Layout>
-    {/* 1. HERO — Primeira impressão, proposta de valor clara */}
-    <section className="relative min-h-[85vh] flex items-center overflow-hidden">
-      <div className="absolute inset-0">
-        <img src={heroBg} alt="" className="w-full h-full object-cover opacity-30" />
-        <div className="absolute inset-0 bg-gradient-hero" />
-      </div>
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="max-w-3xl"
-        >
-          <span className="inline-block text-sm font-semibold text-primary bg-primary/10 px-4 py-1.5 rounded-full mb-6">
-            Soluções Tecnológicas em Moçambique
-          </span>
-          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-            Tecnologia que <span className="text-gradient">transforma</span> o seu negócio
-          </h1>
-          <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl">
-            Websites, redes, segurança e muito mais — a RagnaCore é o parceiro ideal para a sua transformação digital.
-          </p>
-          <div className="flex flex-wrap gap-4">
-            <a
-              href="https://wa.me/258860033620?text=Olá!%20Gostaria%20de%20saber%20mais."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-gradient-primary text-primary-foreground px-8 py-3.5 rounded-lg font-semibold hover:opacity-90 transition-opacity shadow-glow"
+    {/* 1. HERO SLIDER */}
+    <ServicesCarousel />
+
+    {/* 2. BEM VINDO — Apresentação + Serviços resumidos + Form de contacto */}
+    <section className="py-16 md:py-24">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
+          {/* Left: Welcome + mini services */}
+          <div className="lg:col-span-3">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
             >
-              Fale Connosco no WhatsApp
-            </a>
-            <Link
-              to="/servicos"
-              className="border border-border text-foreground px-8 py-3.5 rounded-lg font-semibold hover:bg-secondary transition-colors flex items-center gap-2"
-            >
-              Ver Serviços <ArrowRight size={18} />
-            </Link>
+              <h2 className="font-display text-3xl md:text-4xl font-bold mb-2">
+                Bem vindo à <span className="text-primary">RagnaCore</span>
+                <span className="inline-block w-12 h-[3px] bg-primary ml-3 align-middle" />
+              </h2>
+              <p className="text-muted-foreground mb-10 max-w-xl">
+                Somos uma empresa especializada em Soluções de T.I em Moçambique, peça já a sua cotação{" "}
+                <Link to="/servicos" className="text-primary font-semibold hover:underline">
+                  Ver todos os Serviços
+                </Link>
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {services.map((s, i) => (
+                <motion.div
+                  key={s.title}
+                  custom={i}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={fadeUp}
+                  className="flex gap-4 group"
+                >
+                  <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                    <s.icon size={24} className="text-primary group-hover:text-primary-foreground transition-colors" />
+                  </div>
+                  <div>
+                    <h3 className="font-display font-semibold text-foreground mb-1">
+                      <Link to="/servicos" className="hover:text-primary transition-colors">{s.title}</Link>
+                    </h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
-        </motion.div>
+
+          {/* Right: Cotação form */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="lg:col-span-2"
+          >
+            <div className="bg-primary rounded-xl p-8 text-primary-foreground">
+              <h3 className="font-display text-2xl font-bold mb-3 text-center">Cotação</h3>
+              <p className="text-primary-foreground/80 text-sm text-center mb-6">
+                Digite seus detalhes de contacto aqui para nos ajudar a atendê-lo melhor e mais rápido.
+              </p>
+              <form className="flex flex-col gap-4" onSubmit={(e) => e.preventDefault()}>
+                <input
+                  type="text"
+                  placeholder="Nome *"
+                  className="w-full px-4 py-3 rounded bg-white/10 border border-white/20 text-white placeholder:text-white/50 text-sm focus:outline-none focus:border-white/60"
+                />
+                <input
+                  type="email"
+                  placeholder="Email *"
+                  className="w-full px-4 py-3 rounded bg-white/10 border border-white/20 text-white placeholder:text-white/50 text-sm focus:outline-none focus:border-white/60"
+                />
+                <input
+                  type="tel"
+                  placeholder="Telefone"
+                  className="w-full px-4 py-3 rounded bg-white/10 border border-white/20 text-white placeholder:text-white/50 text-sm focus:outline-none focus:border-white/60"
+                />
+                <textarea
+                  placeholder="Mensagem"
+                  rows={3}
+                  className="w-full px-4 py-3 rounded bg-white/10 border border-white/20 text-white placeholder:text-white/50 text-sm focus:outline-none focus:border-white/60 resize-none"
+                />
+                <button
+                  type="submit"
+                  className="w-full py-3 rounded bg-white text-primary font-bold text-sm hover:bg-white/90 transition-colors"
+                >
+                  Submeter
+                </button>
+              </form>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
 
-    {/* 2. NÚMEROS — Prova social imediata após o hero */}
-    <section className="py-10 md:py-14 border-b border-border bg-card/50">
+    {/* 3. ABOUT CARDS — Sobre, Marcas, Parceiros */}
+    <section className="py-16 md:py-20 bg-muted/50">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-          {stats.map((s, i) => (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {[
+            { img: imgWebsite, title: "Sobre a RagnaCore", desc: "A RagnaCore é uma empresa Moçambicana especializada em soluções tecnológicas completas para empresas e residências.", link: "/sobre" },
+            { img: imgNetwork, title: "Nossos Serviços", desc: "Conheça todos os nossos serviços — desde criação de websites até infraestrutura de redes e segurança eletrónica.", link: "/servicos" },
+            { img: imgSecurity, title: "Nossos Projetos", desc: "Veja os projetos que entregamos com sucesso e a qualidade que define cada solução RagnaCore.", link: "/projetos" },
+          ].map((card, i) => (
             <motion.div
-              key={s.label}
+              key={card.title}
               custom={i}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeUp}
-              className="text-center"
             >
-              <span className="block font-display text-3xl md:text-4xl font-bold text-primary">{s.value}</span>
-              <span className="text-sm text-muted-foreground mt-1">{s.label}</span>
+              <Link to={card.link} className="group block bg-card rounded-xl overflow-hidden shadow-card hover:shadow-glow transition-shadow border border-border">
+                <div className="h-48 overflow-hidden">
+                  <img src={card.img} alt={card.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                </div>
+                <div className="p-6">
+                  <h3 className="font-display font-bold text-foreground mb-2 group-hover:text-primary transition-colors">{card.title}</h3>
+                  <p className="text-sm text-muted-foreground mb-3">{card.desc}</p>
+                  <span className="text-primary text-sm font-semibold inline-flex items-center gap-1">
+                    Saiba mais <ArrowRight size={14} />
+                  </span>
+                </div>
+              </Link>
             </motion.div>
           ))}
         </div>
       </div>
     </section>
 
-    {/* 3. SERVIÇOS CARROSSEL — O que fazemos */}
-    <ServicesCarousel />
-
-    {/* 4. DIFERENCIAIS — Porquê escolher-nos */}
+    {/* 4. NOSSOS SERVIÇOS — Grid completo */}
     <section className="py-16 md:py-24">
       <div className="container mx-auto px-4 md:px-6">
         <motion.div
@@ -107,113 +177,85 @@ const Index = () => (
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-3">
-            Porquê a <span className="text-gradient">RagnaCore</span>?
+          <h2 className="font-display text-3xl md:text-4xl font-bold mb-3">
+            Nossos <span className="text-primary">Serviços</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">Diferenciais que nos tornam a escolha certa</p>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Na RagnaCore dispomos de várias soluções para a sua empresa
+          </p>
         </motion.div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {differentials.map((d, i) => (
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {mainServices.map((s, i) => (
             <motion.div
-              key={d.title}
+              key={s.title}
               custom={i}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeUp}
-              className="text-center p-6 rounded-xl border border-border bg-card shadow-card hover:shadow-glow transition-shadow"
+              className="group border border-border rounded-xl p-6 bg-card hover:shadow-glow transition-all hover:border-primary/30"
             >
-              <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                <d.icon size={28} className="text-primary" />
+              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary transition-colors">
+                <s.icon size={22} className="text-primary group-hover:text-primary-foreground transition-colors" />
               </div>
-              <h3 className="font-display font-semibold text-foreground mb-2">{d.title}</h3>
-              <p className="text-sm text-muted-foreground">{d.desc}</p>
+              <h3 className="font-display font-bold text-foreground mb-2 group-hover:text-primary transition-colors">{s.title}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed mb-4">{s.desc}</p>
+              <Link to="/servicos" className="text-primary text-sm font-semibold inline-flex items-center gap-1 hover:underline">
+                Saiba mais <ArrowRight size={14} />
+              </Link>
             </motion.div>
           ))}
         </div>
       </div>
     </section>
 
-    {/* 5. SOBRE — Quem somos (compacto, com contexto) */}
-    <section className="py-16 md:py-24 bg-card/50">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-            <span className="text-sm font-semibold text-primary uppercase tracking-widest mb-3 block">Sobre Nós</span>
-            <h2 className="font-display text-3xl md:text-4xl font-bold mb-5">
-              Quem é a <span className="text-gradient">RagnaCore</span>?
-            </h2>
-            <p className="text-muted-foreground leading-relaxed mb-4">
-              Somos uma empresa de tecnologia sediada em Maputo, Moçambique, focada em entregar soluções inovadoras e acessíveis. Desde a criação de websites até a instalação de sistemas de segurança, a RagnaCore é sinónimo de confiança e excelência técnica.
-            </p>
-            <p className="text-muted-foreground leading-relaxed mb-6">
-              A nossa missão é capacitar negócios e residências com a melhor tecnologia disponível, oferecendo um serviço personalizado e suporte contínuo.
-            </p>
-            <Link
-              to="/sobre"
-              className="inline-flex items-center gap-2 text-primary font-semibold hover:underline"
-            >
-              Saiba mais sobre nós <ArrowRight size={16} />
-            </Link>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="grid grid-cols-2 gap-4"
-          >
-            <div className="bg-card rounded-xl border border-border p-6 text-center shadow-card">
-              <Users size={32} className="text-primary mx-auto mb-3" />
-              <span className="block font-display font-bold text-2xl text-foreground">50+</span>
-              <span className="text-xs text-muted-foreground">Clientes Satisfeitos</span>
-            </div>
-            <div className="bg-card rounded-xl border border-border p-6 text-center shadow-card">
-              <Zap size={32} className="text-primary mx-auto mb-3" />
-              <span className="block font-display font-bold text-2xl text-foreground">100+</span>
-              <span className="text-xs text-muted-foreground">Projetos Concluídos</span>
-            </div>
-            <div className="bg-card rounded-xl border border-border p-6 text-center shadow-card col-span-2">
-              <Award size={32} className="text-primary mx-auto mb-3" />
-              <span className="block font-display font-bold text-lg text-foreground">Excelência Técnica</span>
-              <span className="text-xs text-muted-foreground">Profissionais certificados e dedicados</span>
-            </div>
-          </motion.div>
-        </div>
-      </div>
-    </section>
-
-    {/* 6. CTA — Chamada para acção */}
-    <section className="py-16 md:py-24">
+    {/* 5. CTA BANNER — Faixa de chamada à ação */}
+    <section className="py-16 md:py-20 bg-foreground text-white">
       <div className="container mx-auto px-4 md:px-6 text-center">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-          <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
-            Pronto para <span className="text-gradient">inovar</span>?
+          <h2 className="font-display text-2xl md:text-4xl font-bold mb-3">
+            Somos apaixonados pelo nosso trabalho
           </h2>
-          <p className="text-muted-foreground mb-8 max-w-lg mx-auto">
-            Entre em contacto connosco e descubra como a tecnologia pode impulsionar o seu negócio.
+          <p className="text-white/60 text-xl md:text-2xl font-display font-semibold mb-6">
+            Faça crescer o seu negócio
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <a
-              href="https://wa.me/258860033620?text=Olá!%20Gostaria%20de%20um%20orçamento."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-gradient-primary text-primary-foreground px-8 py-3.5 rounded-lg font-semibold hover:opacity-90 transition-opacity shadow-glow inline-block"
-            >
-              Solicitar Orçamento
-            </a>
-            <Link
-              to="/contactos"
-              className="border border-border text-foreground px-8 py-3.5 rounded-lg font-semibold hover:bg-secondary transition-colors"
-            >
-              Ver Contactos
-            </Link>
+          <div className="flex items-center justify-center gap-3 mb-6">
+            <Phone size={20} className="text-primary" />
+            <span className="text-xl md:text-2xl font-bold">+258 860 033 620</span>
           </div>
+          <a
+            href="https://wa.me/258860033620?text=Olá!%20Gostaria%20de%20um%20orçamento."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-primary text-primary-foreground px-8 py-3.5 rounded font-bold text-sm hover:bg-accent transition-colors"
+          >
+            Contacte-nos
+          </a>
         </motion.div>
       </div>
     </section>
 
-    {/* 7. PARCEIROS — Prova social antes do rodapé */}
+    {/* 6. PARCEIROS */}
     <PartnersSection />
+
+    {/* 7. FOOTER CTA */}
+    <section className="py-12 md:py-16 bg-muted/50">
+      <div className="container mx-auto px-4 md:px-6 text-center">
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+          <h2 className="font-display text-2xl md:text-3xl font-bold mb-3">
+            Relações com o cliente com comunicação transparente ...
+          </h2>
+          <p className="text-muted-foreground mb-6">A RagnaCore pode ajudá-lo a chegar lá.</p>
+          <Link
+            to="/contactos"
+            className="inline-block bg-primary text-primary-foreground px-8 py-3.5 rounded font-bold text-sm hover:bg-accent transition-colors"
+          >
+            Vamos a isso
+          </Link>
+        </motion.div>
+      </div>
+    </section>
   </Layout>
 );
 
