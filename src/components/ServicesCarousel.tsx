@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Globe, Server, Wifi, Camera, Shield, ArrowRight } from "lucide-react";
+import { Globe, Server, Wifi, Camera, Shield, ArrowRight, Phone, ShoppingCart } from "lucide-react";
 import { Link } from "react-router-dom";
 import {
   Carousel,
@@ -16,6 +16,7 @@ import imgNetwork from "@/assets/project-network.jpg";
 import imgSecurity from "@/assets/project-security.jpg";
 import imgEcommerce from "@/assets/project-ecommerce.jpg";
 import imgInternet from "@/assets/project-internet.jpg";
+import imgAlarm from "@/assets/project-alarm.jpg";
 
 const carouselSlides = [
   {
@@ -26,10 +27,10 @@ const carouselSlides = [
     image: imgWebsite,
   },
   {
-    icon: Wifi,
-    title: "Infraestrutura de",
-    highlight: "Redes",
-    desc: "Instalação e configuração profissional de infraestruturas de rede, call centers e soluções empresariais.",
+    icon: Phone,
+    title: "Telecomunicações",
+    highlight: "PBX & Call Centers",
+    desc: "Montagem de centrais telefónicas PBX, soluções VoIP e infraestrutura completa de call centers profissionais.",
     image: imgNetwork,
   },
   {
@@ -45,6 +46,13 @@ const carouselSlides = [
     highlight: "Hospedagem",
     desc: "Registo de domínios e alojamento seguro com uptime de 99.9% e certificado SSL incluído.",
     image: imgEcommerce,
+  },
+  {
+    icon: ShoppingCart,
+    title: "Sistemas de",
+    highlight: "Gestão & POS",
+    desc: "Software de gestão e stock para restaurantes, farmácias, bares, armazéns, ferragens e mais.",
+    image: imgAlarm,
   },
   {
     icon: Wifi,
@@ -76,14 +84,14 @@ const ServicesCarousel = () => {
                   alt={s.title}
                   className="absolute inset-0 w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-foreground/70" />
+                <div className="absolute inset-0 bg-foreground/75" />
                 <div className="container mx-auto px-4 md:px-6 relative z-10">
                   <div className="max-w-2xl">
-                    <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+                    <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6">
                       {s.title}{" "}
                       <span className="text-primary">{s.highlight}</span>
                     </h1>
-                    <p className="text-white/80 text-lg md:text-xl mb-8 max-w-lg">
+                    <p className="text-primary-foreground/80 text-lg md:text-xl mb-8 max-w-lg">
                       {s.desc}
                     </p>
                     <div className="flex flex-wrap gap-3">
@@ -95,7 +103,7 @@ const ServicesCarousel = () => {
                       </Link>
                       <Link
                         to="/contactos"
-                        className="border-2 border-white/40 text-white px-7 py-3 rounded font-bold text-sm hover:border-primary hover:text-primary transition-colors"
+                        className="border-2 border-primary-foreground/40 text-primary-foreground px-7 py-3 rounded font-bold text-sm hover:border-primary hover:text-primary transition-colors"
                       >
                         Contacte-nos
                       </Link>
@@ -106,8 +114,8 @@ const ServicesCarousel = () => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="left-4 md:left-8 bg-white/10 border-white/20 text-white hover:bg-primary hover:border-primary hover:text-white h-12 w-12" />
-        <CarouselNext className="right-4 md:right-8 bg-white/10 border-white/20 text-white hover:bg-primary hover:border-primary hover:text-white h-12 w-12" />
+        <CarouselPrevious className="left-4 md:left-8 bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground hover:bg-primary hover:border-primary hover:text-primary-foreground h-12 w-12" />
+        <CarouselNext className="right-4 md:right-8 bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground hover:bg-primary hover:border-primary hover:text-primary-foreground h-12 w-12" />
       </Carousel>
     </section>
   );
