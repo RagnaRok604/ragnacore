@@ -9,6 +9,8 @@ import imgSecurity from "@/assets/project-security.jpg";
 import imgEcommerce from "@/assets/project-ecommerce.jpg";
 import imgInternet from "@/assets/project-internet.jpg";
 import imgAlarm from "@/assets/project-alarm.jpg";
+import imgPos from "@/assets/project-pos.jpg";
+import imgErp from "@/assets/project-erp.jpg";
 
 const projects = [
   { title: "Website Corporativo - Loja XYZ", category: "Website", desc: "Site institucional moderno com catálogo de produtos online.", image: imgWebsite },
@@ -17,13 +19,8 @@ const projects = [
   { title: "E-Commerce - Boutique Fashion", category: "Website", desc: "Loja online responsiva com integração de pagamentos.", image: imgEcommerce },
   { title: "Internet Comunitária - Bairro Solar", category: "Internet", desc: "Distribuição de internet para 200 residências.", image: imgInternet },
   { title: "Segurança Empresarial - Escritórios MOV", category: "Segurança", desc: "Sistema integrado de alarmes e controlo de acesso.", image: imgAlarm },
-];
-
-const partners = [
-  { name: "TP-LINK", color: "hsl(195, 90%, 35%)" },
-  { name: "MikroTik", color: "hsl(210, 80%, 35%)" },
-  { name: "TVCABO", color: "hsl(0, 75%, 45%)" },
-  { name: "Gest Internet", color: "hsl(145, 60%, 35%)" },
+  { title: "Sistema POS - Restaurante Sabores", category: "Gestão & POS", desc: "Implementação de sistema de gestão e stock para restaurante com 3 terminais POS, controlo de inventário e facturação certificada.", image: imgPos },
+  { title: "ERP Financeiro - Grupo Empresarial MKT", category: "Gestão Financeira", desc: "Sistema de gestão financeira integrado para grupo empresarial com módulos de contabilidade, faturação, contas a pagar/receber e relatórios fiscais.", image: imgErp },
 ];
 
 const Projects = () => (

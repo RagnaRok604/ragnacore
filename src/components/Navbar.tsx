@@ -1,20 +1,43 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, MapPin, Clock, Phone } from "lucide-react";
+import { Menu, X, MapPin, Clock, Phone, ChevronDown, Globe, Server, Wifi, Camera, ShoppingCart, Phone as PhoneIcon } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "@/assets/ragnacore-logo.png";
+
+const serviceItems = [
+  { icon: Globe, label: "Criação de Websites", to: "/servicos" },
+  { icon: Server, label: "Domínio & Hospedagem", to: "/servicos" },
+  { icon: PhoneIcon, label: "Telecomunicações & PBX", to: "/servicos" },
+  { icon: Wifi, label: "Infraestrutura de Redes", to: "/servicos" },
+  { icon: Wifi, label: "Internet Residencial", to: "/servicos" },
+  { icon: Camera, label: "Segurança Eletrónica", to: "/servicos" },
+  { icon: ShoppingCart, label: "Sistemas de Gestão & POS", to: "/servicos" },
+];
 
 const links = [
   { to: "/", label: "INÍCIO" },
   { to: "/sobre", label: "SOBRE" },
-  { to: "/servicos", label: "SERVIÇOS" },
+  { to: "/servicos", label: "SERVIÇOS", hasDropdown: true },
   { to: "/projetos", label: "PROJETOS" },
   { to: "/contactos", label: "CONTACTO" },
 ];
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const location = useLocation();
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClick = (e: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setServicesOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, []);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
@@ -45,17 +68,63 @@ const Navbar = () => {
 
             {/* Desktop */}
             <div className="hidden md:flex items-center gap-1">
-              {links.map((l) => (
-                <Link
-                  key={l.to}
-                  to={l.to}
-                  className={`text-[13px] font-semibold tracking-wide px-4 py-2 transition-colors hover:text-primary ${
-                    location.pathname === l.to ? "text-primary" : "text-foreground/70"
-                  }`}
-                >
-                  {l.label}
-                </Link>
-              ))}
+              {links.map((l) =>
+                l.hasDropdown ? (
+                  <div key={l.to} className="relative" ref={dropdownRef}>
+                    <button
+                      onClick={() => setServicesOpen(!servicesOpen)}
+                      className={`text-[13px] font-semibold tracking-wide px-4 py-2 transition-colors hover:text-primary inline-flex items-center gap-1 ${
+                        location.pathname === l.to ? "text-primary" : "text-foreground/70"
+                      }`}
+                    >
+                      {l.label}
+                      <ChevronDown size={14} className={`transition-transform ${servicesOpen ? "rotate-180" : ""}`} />
+                    </button>
+                    <AnimatePresence>
+                      {servicesOpen && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 8 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: 8 }}
+                          transition={{ duration: 0.15 }}
+                          className="absolute top-full left-0 mt-1 w-64 bg-white rounded-lg shadow-lg border border-border py-2 z-50"
+                        >
+                          {serviceItems.map((s) => (
+                            <Link
+                              key={s.label}
+                              to={s.to}
+                              onClick={() => setServicesOpen(false)}
+                              className="flex items-center gap-3 px-4 py-2.5 text-sm text-foreground/70 hover:bg-muted hover:text-primary transition-colors"
+                            >
+                              <s.icon size={16} className="text-primary flex-shrink-0" />
+                              {s.label}
+                            </Link>
+                          ))}
+                          <div className="border-t border-border mt-1 pt-1">
+                            <Link
+                              to="/servicos"
+                              onClick={() => setServicesOpen(false)}
+                              className="block px-4 py-2.5 text-sm font-semibold text-primary hover:bg-muted transition-colors"
+                            >
+                              Ver Todos os Serviços →
+                            </Link>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                ) : (
+                  <Link
+                    key={l.to}
+                    to={l.to}
+                    className={`text-[13px] font-semibold tracking-wide px-4 py-2 transition-colors hover:text-primary ${
+                      location.pathname === l.to ? "text-primary" : "text-foreground/70"
+                    }`}
+                  >
+                    {l.label}
+                  </Link>
+                )
+              )}
               <a
                 href="https://wa.me/258860033620?text=Olá!%20Gostaria%20de%20saber%20mais."
                 target="_blank"
@@ -87,18 +156,56 @@ const Navbar = () => {
               className="md:hidden bg-white border-t border-border overflow-hidden"
             >
               <div className="container mx-auto px-4 py-4 flex flex-col gap-1">
-                {links.map((l) => (
-                  <Link
-                    key={l.to}
-                    to={l.to}
-                    onClick={() => setOpen(false)}
-                    className={`text-sm font-semibold py-2.5 px-3 rounded transition-colors hover:bg-muted ${
-                      location.pathname === l.to ? "text-primary bg-muted" : "text-foreground/70"
-                    }`}
-                  >
-                    {l.label}
-                  </Link>
-                ))}
+                {links.map((l) =>
+                  l.hasDropdown ? (
+                    <div key={l.to}>
+                      <button
+                        onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                        className={`w-full text-left text-sm font-semibold py-2.5 px-3 rounded transition-colors hover:bg-muted flex items-center justify-between ${
+                          location.pathname === l.to ? "text-primary bg-muted" : "text-foreground/70"
+                        }`}
+                      >
+                        {l.label}
+                        <ChevronDown size={16} className={`transition-transform ${mobileServicesOpen ? "rotate-180" : ""}`} />
+                      </button>
+                      <AnimatePresence>
+                        {mobileServicesOpen && (
+                          <motion.div
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: "auto" }}
+                            exit={{ opacity: 0, height: 0 }}
+                            className="overflow-hidden"
+                          >
+                            <div className="pl-4 py-1 space-y-0.5">
+                              {serviceItems.map((s) => (
+                                <Link
+                                  key={s.label}
+                                  to={s.to}
+                                  onClick={() => { setOpen(false); setMobileServicesOpen(false); }}
+                                  className="flex items-center gap-2.5 py-2 px-3 text-sm text-foreground/60 hover:text-primary rounded hover:bg-muted/50 transition-colors"
+                                >
+                                  <s.icon size={14} className="text-primary" />
+                                  {s.label}
+                                </Link>
+                              ))}
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  ) : (
+                    <Link
+                      key={l.to}
+                      to={l.to}
+                      onClick={() => setOpen(false)}
+                      className={`text-sm font-semibold py-2.5 px-3 rounded transition-colors hover:bg-muted ${
+                        location.pathname === l.to ? "text-primary bg-muted" : "text-foreground/70"
+                      }`}
+                    >
+                      {l.label}
+                    </Link>
+                  )
+                )}
                 <a
                   href="https://wa.me/258860033620"
                   target="_blank"

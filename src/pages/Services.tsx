@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Globe, Server, Wifi, Camera, Shield, CheckCircle, Phone as PhoneIcon, Monitor, ShoppingCart } from "lucide-react";
+import { Globe, Server, Wifi, Camera, Shield, CheckCircle, Phone as PhoneIcon, Monitor, ShoppingCart, Zap, ArrowRight } from "lucide-react";
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
 import PartnersSection from "@/components/PartnersSection";
@@ -30,12 +30,6 @@ const services = [
     benefits: ["Cabeamento estruturado Cat5e/Cat6", "Configuração de switches e routers MikroTik", "Redes Wi-Fi empresariais de alta cobertura", "Manutenção preventiva e corretiva"],
   },
   {
-    icon: Wifi,
-    title: "Internet Residencial",
-    desc: "Fornecemos soluções de internet fiável para residências, com instalação profissional e planos adaptados às suas necessidades de navegação e streaming.",
-    benefits: ["Instalação rápida e profissional", "Planos flexíveis", "Conexão estável e de alta velocidade", "Suporte técnico dedicado"],
-  },
-  {
     icon: Camera,
     title: "Sistemas de Segurança",
     desc: "Instalamos câmeras de vigilância, alarmes e sistemas de segurança eletrónica para proteger o seu espaço. Monitorização em tempo real com tecnologia de ponta.",
@@ -47,6 +41,13 @@ const services = [
     desc: "Vendemos e implementamos sistemas de gestão e controlo de stock para diversos tipos de negócio. Soluções completas de ponto de venda (POS) adaptadas ao seu sector.",
     benefits: ["Restaurantes, Pastelarias e Bares", "Farmácias e Clínicas", "Armazéns e Ferragens", "Supermercados e Lojas de Retalho", "Relatórios de vendas e inventário em tempo real", "Facturação certificada e integração fiscal"],
   },
+];
+
+const internetPlans = [
+  { name: "Básico", speed: "30", upload: "10", price: "1 500", color: "from-primary/80 to-primary", features: ["Consumo Ilimitado", "Suporte Técnico", "Instalação Profissional", "Router Wi-Fi incluído"] },
+  { name: "Standard", speed: "60", upload: "20", price: "2 500", color: "from-primary to-accent", popular: true, features: ["Consumo Ilimitado", "IP Público", "Suporte Prioritário", "Instalação Profissional", "Router Wi-Fi incluído"] },
+  { name: "Premium", speed: "100", upload: "30", price: "3 500", color: "from-accent to-primary", features: ["Consumo Ilimitado", "IP Público", "Giga Port", "Suporte Premium 24/7", "Instalação Profissional", "Router Wi-Fi incluído"] },
+  { name: "Ultra", speed: "200", upload: "50", price: "5 500", color: "from-primary/90 to-foreground", features: ["Consumo Ilimitado", "IP Público", "Giga Port", "Suporte VIP", "Instalação Gratuita", "Router Wi-Fi incluído", "Ideal para Empresas"] },
 ];
 
 const Services = () => (
@@ -64,6 +65,7 @@ const Services = () => (
       </div>
     </section>
 
+    {/* Services list */}
     <section className="py-20 md:py-28">
       <div className="container mx-auto px-4 md:px-6 space-y-16">
         {services.map((s, i) => (
@@ -94,6 +96,90 @@ const Services = () => (
             </div>
           </motion.div>
         ))}
+      </div>
+    </section>
+
+    {/* Internet Residencial Plans */}
+    <section className="py-20 md:py-28 bg-muted/50">
+      <div className="container mx-auto px-4 md:px-6">
+        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
+          <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-2">Escolha o seu plano</p>
+          <h2 className="font-display text-3xl md:text-4xl font-bold mb-3">
+            Internet <span className="text-primary">Residencial</span>
+          </h2>
+          <p className="text-muted-foreground max-w-xl mx-auto">Navegue mais e pague menos. Planos de internet fibra com velocidade e estabilidade para toda a família.</p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {internetPlans.map((plan, i) => (
+            <motion.div
+              key={plan.name}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className={`relative bg-card rounded-xl border overflow-hidden transition-shadow hover:shadow-glow ${
+                plan.popular ? "border-primary shadow-glow" : "border-border"
+              }`}
+            >
+              {plan.popular && (
+                <div className="absolute top-0 left-0 right-0 bg-primary text-primary-foreground text-xs font-bold text-center py-1.5 tracking-wider uppercase">
+                  Mais Popular
+                </div>
+              )}
+
+              <div className={`pt-${plan.popular ? "10" : "6"} pb-6 px-6 text-center`}>
+                <h3 className="font-display text-lg font-bold text-foreground mb-4">{plan.name}</h3>
+
+                {/* Speed display like yes.co.mz */}
+                <div className="mb-2">
+                  <div className="flex items-end justify-center gap-1">
+                    <span className="font-display text-5xl font-black text-primary leading-none">{plan.speed}</span>
+                    <span className="text-primary font-bold text-lg mb-1">Mb/s</span>
+                  </div>
+                  <div className="flex items-center justify-center gap-1 mt-1 text-muted-foreground text-sm">
+                    <Zap size={14} />
+                    <span>Upload: {plan.upload} Mb/s</span>
+                  </div>
+                </div>
+
+                <div className="my-5 border-t border-border" />
+
+                <ul className="space-y-2.5 text-left mb-6">
+                  {plan.features.map((f) => (
+                    <li key={f} className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <CheckCircle size={14} className="text-primary shrink-0" />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="mb-5">
+                  <span className="text-xs text-muted-foreground">MZN</span>
+                  <span className="font-display text-3xl font-black text-foreground">{plan.price}</span>
+                  <span className="text-muted-foreground text-sm">/mês</span>
+                </div>
+
+                <a
+                  href={`https://wa.me/258860033620?text=Olá! Gostaria de aderir ao plano ${plan.name} (${plan.speed}Mbps).`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`w-full inline-flex items-center justify-center gap-2 py-3 rounded-lg font-bold text-sm transition-colors ${
+                    plan.popular
+                      ? "bg-primary text-primary-foreground hover:bg-accent"
+                      : "bg-foreground/5 text-foreground hover:bg-primary hover:text-primary-foreground"
+                  }`}
+                >
+                  ADERIR <ArrowRight size={14} />
+                </a>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        <p className="text-center text-xs text-muted-foreground mt-8">
+          * Instalação gratuita em condomínios selecionados. Preços sujeitos a alteração. Contacte-nos para mais informações.
+        </p>
       </div>
     </section>
 
