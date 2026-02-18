@@ -65,37 +65,35 @@ const Services = () => (
       </div>
     </section>
 
-    {/* Services list */}
+    {/* Services Grid */}
     <section className="py-20 md:py-28">
-      <div className="container mx-auto px-4 md:px-6 space-y-16">
-        {services.map((s, i) => (
-          <motion.div
-            key={s.title}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className={`flex flex-col md:flex-row gap-8 items-start ${i % 2 !== 0 ? "md:flex-row-reverse" : ""}`}
-          >
-            <div className="w-full md:w-1/3 flex justify-center md:justify-start">
-              <div className="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center shadow-glow">
-                <s.icon size={40} className="text-primary" />
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((s, i) => (
+            <motion.div
+              key={s.title}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.08 }}
+              className="group bg-card border border-border rounded-xl p-8 hover:border-primary/50 hover:shadow-glow transition-all duration-300"
+            >
+              <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/20 transition-colors">
+                <s.icon size={32} className="text-primary" />
               </div>
-            </div>
-            <div className="w-full md:w-2/3">
-              <h3 className="font-display text-2xl font-bold text-foreground mb-3">{s.title}</h3>
-              <p className="text-muted-foreground leading-relaxed mb-4">{s.desc}</p>
+              <h3 className="font-display text-xl font-bold text-foreground mb-3">{s.title}</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed mb-5">{s.desc}</p>
               <ul className="space-y-2">
                 {s.benefits.map((b) => (
                   <li key={b} className="flex items-center gap-2 text-sm text-secondary-foreground">
-                    <CheckCircle size={16} className="text-primary shrink-0" />
+                    <CheckCircle size={14} className="text-primary shrink-0" />
                     {b}
                   </li>
                 ))}
               </ul>
-            </div>
-          </motion.div>
-        ))}
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
 
