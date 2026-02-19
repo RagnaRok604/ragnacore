@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Globe, Server, Wifi, Camera, Shield, CheckCircle, Phone as PhoneIcon, Monitor, ShoppingCart, Zap, ArrowRight } from "lucide-react";
+import { Globe, Server, Wifi, CheckCircle, Network, BarChart3, Zap, ArrowRight } from "lucide-react";
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
 import PartnersSection from "@/components/PartnersSection";
@@ -18,28 +18,16 @@ const services = [
     benefits: ["Domínios .com, .co.mz e outros", "Hospedagem com uptime de 99.9%", "Certificado SSL incluído", "Suporte técnico especializado"],
   },
   {
-    icon: PhoneIcon,
-    title: "Telecomunicações — PBX & Call Centers",
-    desc: "Somos especialistas em soluções de voz empresarial. Montamos centrais telefónicas PBX (IP-PBX e analógicas), configuramos sistemas VoIP e criamos ambientes completos de call center — desde o cabeamento até à operação.",
-    benefits: ["Montagem e configuração de centrais PBX (Asterisk, FreePBX, 3CX)", "Infraestrutura completa de Call Centers", "Soluções VoIP com redução de custos", "Integração com CRM e sistemas de gestão", "Gravação de chamadas e relatórios de desempenho"],
+    icon: Network,
+    title: "Telecomunicações & Infraestrutura de Redes",
+    desc: "Somos especialistas em soluções de telecomunicações e redes empresariais. Montamos centrais telefónicas PBX, configuramos VoIP, criamos call centers completos e instalamos infraestruturas de rede de alto desempenho.",
+    benefits: ["Centrais PBX (Asterisk, FreePBX, 3CX)", "Infraestrutura completa de Call Centers", "Soluções VoIP com redução de custos", "Cabeamento estruturado Cat5e/Cat6", "Configuração de switches e routers MikroTik", "Redes Wi-Fi empresariais de alta cobertura"],
   },
   {
-    icon: Wifi,
-    title: "Infraestrutura de Redes",
-    desc: "Configuramos e instalamos infraestruturas de rede completas para empresas de qualquer dimensão. Cabeamento estruturado, switches, routers MikroTik e soluções wireless profissionais.",
-    benefits: ["Cabeamento estruturado Cat5e/Cat6", "Configuração de switches e routers MikroTik", "Redes Wi-Fi empresariais de alta cobertura", "Manutenção preventiva e corretiva"],
-  },
-  {
-    icon: Camera,
-    title: "Sistemas de Segurança",
-    desc: "Instalamos câmeras de vigilância, alarmes e sistemas de segurança eletrónica para proteger o seu espaço. Monitorização em tempo real com tecnologia de ponta.",
-    benefits: ["Câmeras HD e Full HD", "Alarmes inteligentes", "Monitorização remota via app", "Instalação profissional certificada"],
-  },
-  {
-    icon: ShoppingCart,
-    title: "Sistemas de Gestão e Stock (POS)",
-    desc: "Vendemos e implementamos sistemas de gestão e controlo de stock para diversos tipos de negócio. Soluções completas de ponto de venda (POS) adaptadas ao seu sector.",
-    benefits: ["Restaurantes, Pastelarias e Bares", "Farmácias e Clínicas", "Armazéns e Ferragens", "Supermercados e Lojas de Retalho", "Relatórios de vendas e inventário em tempo real", "Facturação certificada e integração fiscal"],
+    icon: BarChart3,
+    title: "Sistemas de Gestão ERP",
+    desc: "Vendemos e implementamos sistemas de gestão empresarial (ERP) completos com módulos de facturação, controlo de stock, contabilidade e relatórios financeiros, adaptados ao seu sector de negócio.",
+    benefits: ["Restaurantes, Pastelarias e Bares", "Farmácias e Clínicas", "Armazéns e Ferragens", "Supermercados e Lojas de Retalho", "Contabilidade e gestão financeira", "Facturação certificada e integração fiscal"],
   },
 ];
 

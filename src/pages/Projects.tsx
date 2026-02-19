@@ -5,7 +5,6 @@ import PartnersSection from "@/components/PartnersSection";
 
 import imgWebsite from "@/assets/project-website.jpg";
 import imgNetwork from "@/assets/project-network.jpg";
-import imgSecurity from "@/assets/project-security.jpg";
 import imgEcommerce from "@/assets/project-ecommerce.jpg";
 import imgInternet from "@/assets/project-internet.jpg";
 import imgAlarm from "@/assets/project-alarm.jpg";
@@ -14,13 +13,12 @@ import imgErp from "@/assets/project-erp.jpg";
 
 const projects = [
   { title: "Website Corporativo - Loja XYZ", category: "Website", desc: "Site institucional moderno com catálogo de produtos online.", image: imgWebsite },
-  { title: "Rede Call Center - Empresa ABC", category: "Redes", desc: "Infraestrutura de rede para 50 posições de atendimento.", image: imgNetwork },
-  { title: "Sistema CCTV - Residência Premium", category: "Segurança", desc: "Instalação de 16 câmeras HD com monitorização remota.", image: imgSecurity },
+  { title: "Rede Call Center - Empresa ABC", category: "Telecom & Infraestrutura", desc: "Infraestrutura de rede para 50 posições de atendimento.", image: imgNetwork },
   { title: "E-Commerce - Boutique Fashion", category: "Website", desc: "Loja online responsiva com integração de pagamentos.", image: imgEcommerce },
   { title: "Internet Comunitária - Bairro Solar", category: "Internet", desc: "Distribuição de internet para 200 residências.", image: imgInternet },
-  { title: "Segurança Empresarial - Escritórios MOV", category: "Segurança", desc: "Sistema integrado de alarmes e controlo de acesso.", image: imgAlarm },
-  { title: "Sistema POS - Restaurante Sabores", category: "Gestão & POS", desc: "Implementação de sistema de gestão e stock para restaurante com 3 terminais POS, controlo de inventário e facturação certificada.", image: imgPos },
-  { title: "ERP Financeiro - Grupo Empresarial MKT", category: "Gestão Financeira", desc: "Sistema de gestão financeira integrado para grupo empresarial com módulos de contabilidade, faturação, contas a pagar/receber e relatórios fiscais.", image: imgErp },
+  { title: "PBX Empresarial - Escritórios MOV", category: "Telecom & Infraestrutura", desc: "Montagem de central PBX com 30 extensões e integração VoIP.", image: imgAlarm },
+  { title: "Sistema ERP - Restaurante Sabores", category: "Gestão ERP", desc: "Implementação de sistema ERP com gestão de stock, facturação certificada e controlo de inventário.", image: imgPos },
+  { title: "ERP Financeiro - Grupo Empresarial MKT", category: "Gestão ERP", desc: "Sistema de gestão financeira integrado com módulos de contabilidade, faturação, contas a pagar/receber e relatórios fiscais.", image: imgErp },
 ];
 
 const Projects = () => (
