@@ -1,17 +1,15 @@
 import { useState, useRef, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, MapPin, Clock, Phone, ChevronDown, Globe, Server, Wifi, Camera, ShoppingCart, Phone as PhoneIcon } from "lucide-react";
+import { Menu, X, MapPin, Clock, Phone, ChevronDown, Globe, Server, Wifi, Network, BarChart3 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "@/assets/ragnacore-logo.png";
 
 const serviceItems = [
   { icon: Globe, label: "Criação de Websites", to: "/servicos" },
   { icon: Server, label: "Domínio & Hospedagem", to: "/servicos" },
-  { icon: PhoneIcon, label: "Telecomunicações & PBX", to: "/servicos" },
-  { icon: Wifi, label: "Infraestrutura de Redes", to: "/servicos" },
+  { icon: Network, label: "Telecomunicações & Infraestrutura", to: "/servicos" },
   { icon: Wifi, label: "Internet Residencial", to: "/servicos" },
-  { icon: Camera, label: "Segurança Eletrónica", to: "/servicos" },
-  { icon: ShoppingCart, label: "Sistemas de Gestão & POS", to: "/servicos" },
+  { icon: BarChart3, label: "Sistemas de Gestão ERP", to: "/servicos" },
 ];
 
 const links = [
@@ -63,7 +61,7 @@ const Navbar = () => {
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex items-center justify-between h-16 md:h-[70px]">
             <Link to="/" className="flex items-center">
-              <img src={logo} alt="RagnaCore" className="h-8 md:h-10" />
+              <img src={logo} alt="RagnaCore" className="h-10 md:h-12 w-auto" />
             </Link>
 
             {/* Desktop */}

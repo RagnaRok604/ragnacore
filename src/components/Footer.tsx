@@ -31,11 +31,10 @@ const Footer = () => (
           <h4 className="font-display font-semibold text-primary-foreground mb-4">Serviços</h4>
           <div className="flex flex-col gap-2 text-sm text-primary-foreground/60">
             <span>Criação de Websites</span>
-            <span>Telecomunicações & PBX</span>
-            <span>Infraestrutura de Redes</span>
-            <span>Segurança Eletrónica</span>
-            <span>Hospedagem Web</span>
-            <span>Sistemas de Gestão & POS</span>
+            <span>Domínio & Hospedagem</span>
+            <span>Telecom & Infraestrutura</span>
+            <span>Internet Residencial</span>
+            <span>Sistemas de Gestão ERP</span>
           </div>
         </div>
         <div>

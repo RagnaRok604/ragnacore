@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Globe, Server, Wifi, Camera, Shield, Award, Headphones, Zap, CheckCircle, ArrowRight, Users, Phone, ShoppingCart } from "lucide-react";
+import { Globe, Server, Wifi, Shield, Award, Headphones, Zap, CheckCircle, ArrowRight, Users, Phone, Network, BarChart3 } from "lucide-react";
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import ServicesCarousel from "@/components/ServicesCarousel";
@@ -11,18 +11,18 @@ import imgSecurity from "@/assets/project-security.jpg";
 
 const services = [
   { icon: Globe, title: "Criação de Websites", desc: "Criamos websites para sua empresa, desde sites simples até plataformas complexas com as melhores tecnologias." },
-  { icon: Phone, title: "Telecomunicações & PBX", desc: "Centrais telefónicas PBX, VoIP empresarial e montagem completa de call centers." },
+  { icon: Network, title: "Telecom & Infraestrutura", desc: "Centrais PBX, VoIP, call centers e infraestrutura de redes empresariais completa." },
   { icon: Server, title: "Domínio & Hospedagem", desc: "Registo de domínios e alojamento seguro com uptime de 99.9% e certificado SSL incluído." },
-  { icon: Camera, title: "Segurança Eletrónica", desc: "Câmeras HD, alarmes inteligentes e monitorização remota via aplicação móvel." },
+  { icon: BarChart3, title: "Sistemas de Gestão ERP", desc: "Software ERP completo para restaurantes, farmácias, bares, armazéns e mais." },
 ];
 
 const mainServices = [
-  { icon: Shield, title: "Segurança de Redes", desc: "Proteção avançada para a sua infraestrutura de rede com firewalls e monitorização contínua." },
   { icon: Globe, title: "Criação de Websites", desc: "Desenvolvemos websites responsivos e modernos com as melhores práticas de UX/UI." },
-  { icon: Server, title: "Hospedagem Web", desc: "Alojamento fiável e seguro para o seu website com suporte técnico dedicado." },
-  { icon: Phone, title: "PBX & Call Centers", desc: "Montagem de centrais telefónicas, soluções VoIP e ambientes de call center profissionais." },
+  { icon: Server, title: "Domínio & Hospedagem", desc: "Alojamento fiável e seguro para o seu website com suporte técnico dedicado." },
+  { icon: Network, title: "Telecom & Infraestrutura", desc: "Centrais PBX, VoIP, call centers e cabeamento estruturado para empresas." },
+  { icon: Wifi, title: "Internet Residencial", desc: "Planos de internet fibra para residências com velocidade e estabilidade." },
   { icon: Headphones, title: "Suporte Técnico", desc: "Assistência técnica especializada para manter os seus sistemas sempre operacionais." },
-  { icon: ShoppingCart, title: "Sistemas de Gestão & POS", desc: "Software de gestão e stock para restaurantes, farmácias, bares, armazéns e mais." },
+  { icon: BarChart3, title: "Sistemas de Gestão ERP", desc: "Software ERP completo para restaurantes, farmácias, bares, armazéns e mais." },
 ];
 
 const fadeUp = {

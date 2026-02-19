@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Globe, Server, Wifi, Camera, Shield, ArrowRight, Phone, ShoppingCart } from "lucide-react";
+import { Globe, Server, Wifi, ArrowRight, Network, BarChart3 } from "lucide-react";
 import { Link } from "react-router-dom";
 import {
   Carousel,
@@ -13,7 +13,7 @@ import { useRef } from "react";
 
 import imgWebsite from "@/assets/project-website.jpg";
 import imgNetwork from "@/assets/project-network.jpg";
-import imgSecurity from "@/assets/project-security.jpg";
+
 import imgEcommerce from "@/assets/project-ecommerce.jpg";
 import imgInternet from "@/assets/project-internet.jpg";
 import imgAlarm from "@/assets/project-alarm.jpg";
@@ -27,18 +27,11 @@ const carouselSlides = [
     image: imgWebsite,
   },
   {
-    icon: Phone,
-    title: "Telecomunicações",
-    highlight: "PBX & Call Centers",
-    desc: "Montagem de centrais telefónicas PBX, soluções VoIP e infraestrutura completa de call centers profissionais.",
+    icon: Network,
+    title: "Telecomunicações &",
+    highlight: "Infraestrutura",
+    desc: "Centrais PBX, VoIP, call centers e infraestrutura de redes empresariais completa.",
     image: imgNetwork,
-  },
-  {
-    icon: Camera,
-    title: "Segurança",
-    highlight: "Eletrónica",
-    desc: "Sistemas de câmeras HD, alarmes inteligentes e monitorização remota para a sua tranquilidade.",
-    image: imgSecurity,
   },
   {
     icon: Server,
@@ -48,10 +41,10 @@ const carouselSlides = [
     image: imgEcommerce,
   },
   {
-    icon: ShoppingCart,
+    icon: BarChart3,
     title: "Sistemas de",
-    highlight: "Gestão & POS",
-    desc: "Software de gestão e stock para restaurantes, farmácias, bares, armazéns, ferragens e mais.",
+    highlight: "Gestão ERP",
+    desc: "Software ERP completo para restaurantes, farmácias, bares, armazéns, ferragens e mais.",
     image: imgAlarm,
   },
   {
