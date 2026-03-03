@@ -7,6 +7,8 @@ import imgWebsite from "@/assets/project-website.jpg";
 import imgNetwork from "@/assets/project-network.jpg";
 import imgEcommerce from "@/assets/project-ecommerce.jpg";
 import imgInternet from "@/assets/project-internet.jpg";
+import imgPos from "@/assets/project-pos.jpg";
+import imgErp from "@/assets/project-erp.jpg";
 import imgPbxYeastar from "@/assets/project-pbx-yeastar.jpg";
 
 const projects = [
