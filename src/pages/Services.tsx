@@ -192,6 +192,7 @@ const Services = () => {
 
     <PartnersSection />
   </Layout>
-);
+  );
+};
 
 export default Services;
