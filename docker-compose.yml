@@ -1,0 +1,29 @@
+services:
+  ragna_core:
+    image: nginx:alpine
+    networks:
+      - traefik_public
+    volumes:
+      - "./dist:/usr/share/nginx/html:ro"
+    restart: unless-stopped
+    deploy:
+      update_config:
+        parallelism: 1
+        delay: 5s
+        order: stop-first
+      placement:
+        constraints:
+          - node.role==manager
+      replicas: 2
+      labels:
+        - traefik.enable=true
+        - traefik.http.routers.ragna_core.rule=Host(`ragnacore.com`) || Host(`www.ragnacore.com`) || Host(`web.ragnacore.com`) || Host(`m.ragnacore.com`)
+        - "traefik.http.routers.ragna_core.service=ragna_core"
+        - "traefik.http.routers.ragna_core.entrypoints=websecure"
+        - "traefik.http.routers.ragna_core.tls.certresolver=le"
+        - "traefik.http.routers.ragna_core.tls=true"
+        - "traefik.http.services.ragna_core.loadbalancer.server.port=80"
+        # Router for www + w1
+networks:
+  traefik_public:
+    external: true
