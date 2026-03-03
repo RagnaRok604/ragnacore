@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Globe, Server, Wifi, CheckCircle, Network, BarChart3, Zap, ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
 import PartnersSection from "@/components/PartnersSection";
@@ -16,6 +17,7 @@ const services = [
     title: "Venda de Domínio e Hospedagem",
     desc: "Oferecemos registo de domínios e planos de hospedagem seguros e fiáveis. Com servidores de alto desempenho, o seu site estará sempre online e protegido.",
     benefits: ["Domínios .com, .co.mz e outros", "Hospedagem com uptime de 99.9%", "Certificado SSL incluído", "Suporte técnico especializado"],
+    link: "/hospedagem",
   },
   {
     icon: Network,
@@ -38,7 +40,9 @@ const internetPlans = [
   { name: "Ultra", speed: "200", upload: "50", price: "5 500", color: "from-primary/90 to-foreground", features: ["Consumo Ilimitado", "IP Público", "Giga Port", "Suporte VIP", "Instalação Gratuita", "Router Wi-Fi incluído", "Ideal para Empresas"] },
 ];
 
-const Services = () => (
+const Services = () => {
+  const navigate = useNavigate();
+  return (
   <Layout>
     <section className="py-20 md:py-28 bg-gradient-hero">
       <div className="container mx-auto px-4 md:px-6 text-center">
@@ -64,7 +68,8 @@ const Services = () => (
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
-              className="group bg-card border border-border rounded-xl p-8 hover:border-primary/50 hover:shadow-glow transition-all duration-300"
+              onClick={() => (s as any).link && navigate((s as any).link)}
+              className={`group bg-card border border-border rounded-xl p-8 hover:border-primary/50 hover:shadow-glow transition-all duration-300 ${(s as any).link ? "cursor-pointer" : ""}`}
             >
               <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/20 transition-colors">
                 <s.icon size={32} className="text-primary" />
@@ -187,6 +192,7 @@ const Services = () => (
 
     <PartnersSection />
   </Layout>
-);
+  );
+};
 
 export default Services;
