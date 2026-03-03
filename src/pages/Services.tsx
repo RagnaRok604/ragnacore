@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Globe, Server, Wifi, CheckCircle, Network, BarChart3, Zap, ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
 import PartnersSection from "@/components/PartnersSection";
@@ -16,6 +17,7 @@ const services = [
     title: "Venda de Domínio e Hospedagem",
     desc: "Oferecemos registo de domínios e planos de hospedagem seguros e fiáveis. Com servidores de alto desempenho, o seu site estará sempre online e protegido.",
     benefits: ["Domínios .com, .co.mz e outros", "Hospedagem com uptime de 99.9%", "Certificado SSL incluído", "Suporte técnico especializado"],
+    link: "/hospedagem",
   },
   {
     icon: Network,
