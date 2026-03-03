@@ -34,8 +34,8 @@ jobs:
           host: ${{ secrets.SSH_SERVER }}
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_PASS_KEY }}
-          source: "dist/,docker-compose.yaml"
-          target: sofala_logistics_site
+          source: "dist/,docker-compose.yml"
+          target: ragna
   buildApp:
     name: Build app to server
     runs-on: ubuntu-latest
