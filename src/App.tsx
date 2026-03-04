@@ -9,6 +9,7 @@ import Services from "./pages/Services";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 import Hosting from "./pages/Hosting";
+import Erp from "./pages/Erp";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
