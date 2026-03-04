@@ -30,6 +30,7 @@ const services = [
     title: "Sistemas de Gestão ERP",
     desc: "Vendemos e implementamos sistemas de gestão empresarial (ERP) completos com módulos de facturação, controlo de stock, contabilidade e relatórios financeiros, adaptados ao seu sector de negócio.",
     benefits: ["Restaurantes, Pastelarias e Bares", "Farmácias e Clínicas", "Armazéns e Ferragens", "Supermercados e Lojas de Retalho", "Contabilidade e gestão financeira", "Facturação certificada e integração fiscal"],
+    link: "/erp",
   },
 ];
 
