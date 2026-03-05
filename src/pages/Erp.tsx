@@ -274,23 +274,36 @@ const Erp = () => {
                   plan.popular ? "border-primary shadow-glow" : "border-border"
                 }`}
               >
-                {plan.popular && (
+                {!plan.custom && (
+                  <div className="bg-amber-500 text-black text-xs font-bold text-center py-2 px-3">
+                    <span className="inline-block border border-black/30 rounded px-2 py-0.5">50% de desconto<br />no primeiro mês</span>
+                  </div>
+                )}
+                {plan.popular && !plan.custom && (
                   <div className="bg-primary text-primary-foreground text-xs font-bold text-center py-1.5 tracking-wider uppercase">
                     Mais Popular
                   </div>
                 )}
                 <div className="p-6">
                   <h3 className="font-display text-lg font-bold text-foreground mb-1">{plan.name}</h3>
-                  <div className="mb-3">
+                  <div className="mb-1">
                     {plan.custom ? (
                       <span className="font-display text-2xl font-black text-foreground">{plan.price}</span>
                     ) : (
                       <>
-                        <span className="font-display text-3xl font-black text-foreground">{plan.price}</span>
-                        <span className="text-muted-foreground text-sm"> MZN/mês</span>
+                        <span className="font-display text-3xl font-black text-foreground">{plan.promoPrice}</span>
+                        <span className="text-muted-foreground text-sm"> MZN</span>
+                        <span className="text-muted-foreground text-sm"> /mês</span>
                       </>
                     )}
                   </div>
+                  {!plan.custom && (
+                    <div className="mb-2">
+                      <p className="text-muted-foreground text-xs">Renovação automática</p>
+                      <p className="font-display text-lg font-bold text-foreground">{plan.price}<span className="text-muted-foreground text-xs font-normal"> MZN</span></p>
+                      <p className="text-muted-foreground text-[10px] leading-tight mt-1">*Promoção válida apenas no primeiro mês. Renovação automática pelo valor normal.</p>
+                    </div>
+                  )}
                   <p className="text-muted-foreground text-sm mb-4">{plan.desc}</p>
 
                   <div className="space-y-1.5 text-xs text-muted-foreground mb-4">
