@@ -131,12 +131,22 @@ const Erp = () => {
               <p className="text-primary-foreground/70 text-lg mb-8 max-w-lg">
                 Maximize a eficiência do seu negócio com nossa solução integrada de ERP na nuvem. Acesso em qualquer lugar, relatórios em tempo real e escalabilidade para crescer com a sua empresa.
               </p>
-              <a
-                href="#recursos"
-                className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-3.5 rounded-lg font-bold hover:bg-accent transition-colors"
-              >
-                SAIBA MAIS <ChevronRight size={18} />
-              </a>
+              <div className="flex flex-wrap gap-4">
+                <a
+                  href="http://www.cs.co.mz"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-3.5 rounded-lg font-bold hover:bg-accent transition-colors"
+                >
+                  ACEDER À PLATAFORMA <ArrowRight size={18} />
+                </a>
+                <a
+                  href="#recursos"
+                  className="inline-flex items-center gap-2 border border-primary text-primary px-8 py-3.5 rounded-lg font-bold hover:bg-primary/10 transition-colors"
+                >
+                  SAIBA MAIS <ChevronRight size={18} />
+                </a>
+              </div>
             </motion.div>
 
             <motion.div initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, delay: 0.2 }} className="relative">
