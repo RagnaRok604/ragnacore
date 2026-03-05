@@ -80,32 +80,35 @@ const plans = [
   {
     name: "Pacote Básico",
     price: "4 500",
+    promoPrice: "2 250",
     desc: "Pacote básico para pequenas empresas",
-    users: "2", companies: "1", products: "1 000", storage: "1 GB",
-    features: ["Vendas", "Recebimentos", "Gestão de Artigos", "Gestão de Clientes", "Relatório Operacional", "Relatórios", "Extratos"],
+    users: "2", companies: "1", products: "10 000", storage: "1024 MB",
+    features: ["Vendas", "Recebimentos", "Gestão de Artigos", "Relatório Clientes", "Relatório Operacional", "Relatórios", "Extratos"],
     cta: "https://cserp.cs.co.mz/checkout?pacote=BASIC_001",
   },
   {
     name: "Pacote Profissional",
     price: "9 500",
+    promoPrice: "4 750",
     desc: "Pacote padrão para médias empresas",
-    users: "2", companies: "1", products: "100 000", storage: "5 GB",
+    users: "2", companies: "1", products: "100 000", storage: "5120 MB",
     popular: true,
-    features: ["Vendas", "Compras", "Inventários", "Recebimentos", "Pagamentos", "Adiantamentos", "Bancos", "Gestão de Artigos", "Gestão de Clientes", "Gestão de Fornecedores", "Relatório Financeiro", "POS"],
+    features: ["Vendas", "Compras", "Inventários", "Gestão de Clientes", "Gestão de Fornecedores", "Relatório Financeiro", "Relatório Operacional", "Relatórios"],
     cta: "https://cserp.cs.co.mz/checkout?pacote=STANDARD_001",
   },
   {
     name: "Pacote Executivo",
     price: "15 000",
+    promoPrice: "7 500",
     desc: "Pacote premium para grandes empresas",
-    users: "2", companies: "1", products: "100 000", storage: "10 GB",
-    features: ["Vendas", "Compras", "Despesas", "Inventários", "Recebimentos", "Pagamentos", "Bancos", "Gestão de Projectos", "Colaboradores", "Contabilidade", "Relatório Financeiro", "POS"],
+    users: "2", companies: "1", products: "200 000", storage: "10240 MB",
+    features: ["Vendas", "Compras", "Despesas", "Gestão de Despesas", "Inventários", "Recebimentos", "Pagamentos", "Adiantamentos", "Bancos", "Gestão de Projectos", "Colaboradores", "Outros", "Gestão de Artigos", "Gestão de Clientes", "Gestão de Fornecedores", "Contabilidade", "Relatório Financeiro", "Relatório Operacional", "Relatórios", "Extractos", "Extratos", "POS"],
     cta: "https://cserp.cs.co.mz/checkout?pacote=PREMIUM_001",
   },
   {
     name: "Pacote Personalizado",
     price: "Sob consulta",
-    desc: "Crie um pacote sob medida para sua empresa",
+    desc: "Crie um pacote sob medida para sua empresa com as funcionalidades que você precisa.",
     users: "Personalizado", companies: "Personalizado", products: "Personalizado", storage: "Personalizado",
     features: ["Funcionalidades à sua escolha", "Suporte dedicado", "Implementação personalizada", "Treinamento da equipe"],
     cta: "https://wa.me/258860033620?text=Olá! Gostaria de saber mais sobre o Pacote Personalizado do CS ERP.",
@@ -271,23 +274,36 @@ const Erp = () => {
                   plan.popular ? "border-primary shadow-glow" : "border-border"
                 }`}
               >
-                {plan.popular && (
+                {!plan.custom && (
+                  <div className="bg-amber-500 text-black text-xs font-bold text-center py-2 px-3">
+                    <span className="inline-block border border-black/30 rounded px-2 py-0.5">50% de desconto<br />no primeiro mês</span>
+                  </div>
+                )}
+                {plan.popular && !plan.custom && (
                   <div className="bg-primary text-primary-foreground text-xs font-bold text-center py-1.5 tracking-wider uppercase">
                     Mais Popular
                   </div>
                 )}
                 <div className="p-6">
                   <h3 className="font-display text-lg font-bold text-foreground mb-1">{plan.name}</h3>
-                  <div className="mb-3">
+                  <div className="mb-1">
                     {plan.custom ? (
                       <span className="font-display text-2xl font-black text-foreground">{plan.price}</span>
                     ) : (
                       <>
-                        <span className="font-display text-3xl font-black text-foreground">{plan.price}</span>
-                        <span className="text-muted-foreground text-sm"> MZN/mês</span>
+                        <span className="font-display text-3xl font-black text-foreground">{plan.promoPrice}</span>
+                        <span className="text-muted-foreground text-sm"> MZN</span>
+                        <span className="text-muted-foreground text-sm"> /mês</span>
                       </>
                     )}
                   </div>
+                  {!plan.custom && (
+                    <div className="mb-2">
+                      <p className="text-muted-foreground text-xs">Renovação automática</p>
+                      <p className="font-display text-lg font-bold text-foreground">{plan.price}<span className="text-muted-foreground text-xs font-normal"> MZN</span></p>
+                      <p className="text-muted-foreground text-[10px] leading-tight mt-1">*Promoção válida apenas no primeiro mês. Renovação automática pelo valor normal.</p>
+                    </div>
+                  )}
                   <p className="text-muted-foreground text-sm mb-4">{plan.desc}</p>
 
                   <div className="space-y-1.5 text-xs text-muted-foreground mb-4">
