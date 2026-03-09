@@ -80,7 +80,7 @@ const plans = [
   {
     name: "Pacote Básico",
     price: "4 500",
-    promoPrice: "2 250",
+    promoPrice: "3 150",
     desc: "Pacote básico para pequenas empresas",
     users: "2", companies: "1", products: "10 000", storage: "1024 MB",
     features: ["Vendas", "Recebimentos", "Gestão de Artigos", "Relatório Clientes", "Relatório Operacional", "Relatórios", "Extratos"],
@@ -89,7 +89,7 @@ const plans = [
   {
     name: "Pacote Profissional",
     price: "9 500",
-    promoPrice: "4 750",
+    promoPrice: "6 650",
     desc: "Pacote padrão para médias empresas",
     users: "2", companies: "1", products: "100 000", storage: "5120 MB",
     popular: true,
@@ -99,7 +99,7 @@ const plans = [
   {
     name: "Pacote Executivo",
     price: "15 000",
-    promoPrice: "7 500",
+    promoPrice: "10 500",
     desc: "Pacote premium para grandes empresas",
     users: "2", companies: "1", products: "200 000", storage: "10240 MB",
     features: ["Vendas", "Compras", "Despesas", "Gestão de Despesas", "Inventários", "Recebimentos", "Pagamentos", "Adiantamentos", "Bancos", "Gestão de Projectos", "Colaboradores", "Outros", "Gestão de Artigos", "Gestão de Clientes", "Gestão de Fornecedores", "Contabilidade", "Relatório Financeiro", "Relatório Operacional", "Relatórios", "Extractos", "Extratos", "POS"],
@@ -276,7 +276,7 @@ const Erp = () => {
               >
                 {!plan.custom && (
                   <div className="bg-amber-500 text-black text-xs font-bold text-center py-2 px-3">
-                    <span className="inline-block border border-black/30 rounded px-2 py-0.5">50% de desconto<br />no primeiro mês</span>
+                    <span className="inline-block border border-black/30 rounded px-2 py-0.5"><span className="inline-block border border-black/30 rounded px-2 py-0.5">30% de desconto<br />no primeiro mês</span><br />no primeiro mês</span>
                   </div>
                 )}
                 {plan.popular && !plan.custom && (
