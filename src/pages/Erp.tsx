@@ -275,7 +275,7 @@ const Erp = () => {
                 }`}
               >
                 {!plan.custom && (
-                  <div className="bg-accent text-accent-foreground text-sm font-bold text-center py-2.5 px-4 tracking-wide">
+                  <div className="bg-primary text-primary-foreground text-sm font-bold text-center py-2.5 px-4 tracking-wide">
                     🔥 30% de desconto no primeiro mês
                   </div>
                 )}
