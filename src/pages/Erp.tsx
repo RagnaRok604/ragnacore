@@ -80,7 +80,7 @@ const plans = [
   {
     name: "Pacote Básico",
     price: "4 500",
-    promoPrice: "2 250",
+    promoPrice: "3 150",
     desc: "Pacote básico para pequenas empresas",
     users: "2", companies: "1", products: "10 000", storage: "1024 MB",
     features: ["Vendas", "Recebimentos", "Gestão de Artigos", "Relatório Clientes", "Relatório Operacional", "Relatórios", "Extratos"],
