@@ -93,7 +93,7 @@ const plans = [
     desc: "Pacote padrão para médias empresas",
     users: "2", companies: "1", products: "100 000", storage: "5120 MB",
     popular: true,
-    features: ["Vendas", "Compras", "Inventários", "Gestão de Clientes", "Gestão de Fornecedores", "Relatório Financeiro", "Relatório Operacional", "Relatórios"],
+    features: ["Vendas", "Compras", "Inventários", "Recebimentos", "Pagamentos", "Adiantamentos", "Bancos", "Gestão de Artigos", "Gestão de Clientes", "Gestão de Fornecedores", "Relatório Financeiro", "Relatório Operacional", "Relatórios", "Extractos", "Extratos", "POS"],
     cta: "https://cserp.cs.co.mz/checkout?pacote=STANDARD_001",
   },
   {
