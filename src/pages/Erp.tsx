@@ -99,7 +99,7 @@ const plans = [
   {
     name: "Pacote Executivo",
     price: "15 000",
-    promoPrice: "7 500",
+    promoPrice: "10 500",
     desc: "Pacote premium para grandes empresas",
     users: "2", companies: "1", products: "200 000", storage: "10240 MB",
     features: ["Vendas", "Compras", "Despesas", "Gestão de Despesas", "Inventários", "Recebimentos", "Pagamentos", "Adiantamentos", "Bancos", "Gestão de Projectos", "Colaboradores", "Outros", "Gestão de Artigos", "Gestão de Clientes", "Gestão de Fornecedores", "Contabilidade", "Relatório Financeiro", "Relatório Operacional", "Relatórios", "Extractos", "Extratos", "POS"],
