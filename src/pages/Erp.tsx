@@ -276,7 +276,7 @@ const Erp = () => {
               >
                 {!plan.custom && (
                   <div className="bg-amber-500 text-black text-xs font-bold text-center py-2 px-3">
-                    <span className="inline-block border border-black/30 rounded px-2 py-0.5">50% de desconto<br />no primeiro mês</span>
+                    <span className="inline-block border border-black/30 rounded px-2 py-0.5"><span className="inline-block border border-black/30 rounded px-2 py-0.5">30% de desconto<br />no primeiro mês</span><br />no primeiro mês</span>
                   </div>
                 )}
                 {plan.popular && !plan.custom && (
