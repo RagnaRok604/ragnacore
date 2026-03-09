@@ -89,7 +89,7 @@ const plans = [
   {
     name: "Pacote Profissional",
     price: "9 500",
-    promoPrice: "4 750",
+    promoPrice: "6 650",
     desc: "Pacote padrão para médias empresas",
     users: "2", companies: "1", products: "100 000", storage: "5120 MB",
     popular: true,
