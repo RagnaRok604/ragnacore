@@ -106,7 +106,7 @@ const Index = () => (
             <motion.div key={card.title} custom={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
               <Link to={card.link} className="group block bg-card rounded-xl overflow-hidden shadow-card hover:shadow-glow transition-shadow border border-border">
                 <div className="h-48 overflow-hidden">
-                  <img src={card.img} alt={card.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <img src={card.img} alt={card.title} className={`w-full h-full ${card.imgClass} group-hover:scale-105 transition-transform duration-500`} />
                 </div>
                 <div className="p-6">
                   <h3 className="font-display font-bold text-foreground mb-2 group-hover:text-primary transition-colors">{card.title}</h3>
