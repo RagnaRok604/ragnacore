@@ -275,12 +275,12 @@ const Erp = () => {
                 }`}
               >
                 {!plan.custom && (
-                  <div className="bg-primary text-primary-foreground text-sm font-bold text-center py-2.5 px-4 tracking-wide">
-                    🔥 30% de desconto no primeiro mês
+                  <div className="bg-accent text-accent-foreground text-sm font-semibold text-center py-2 px-4 tracking-wide">
+                    30% de desconto no primeiro mês
                   </div>
                 )}
                 {plan.popular && !plan.custom && (
-                  <div className="bg-primary text-primary-foreground text-xs font-bold text-center py-1.5 tracking-wider uppercase">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-bold px-4 py-1.5 rounded-full shadow-lg uppercase tracking-wider">
                     Mais Popular
                   </div>
                 )}
