@@ -5,9 +5,9 @@ import Layout from "@/components/Layout";
 import ServicesCarousel from "@/components/ServicesCarousel";
 import PartnersSection from "@/components/PartnersSection";
 
-import imgWebsite from "@/assets/project-website.jpg";
+import imgErp from "@/assets/project-erp.jpg";
 import imgNetwork from "@/assets/project-network.jpg";
-import imgSecurity from "@/assets/project-security.jpg";
+import imgEcommerce from "@/assets/project-ecommerce.jpg";
 
 const services = [
   { icon: Globe, title: "Criação de Websites", desc: "Criamos websites para sua empresa, desde sites simples até plataformas complexas com as melhores tecnologias." },
