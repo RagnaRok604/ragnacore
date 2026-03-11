@@ -28,7 +28,7 @@ const About = () => (
       <div className="container mx-auto px-4 md:px-6 text-center">
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
           <h1 className="font-display text-4xl md:text-5xl font-bold mb-4">
-            Sobre a <span className="text-gradient">RagnaCore</span>
+            <span className="text-primary-foreground">Sobre a </span><span className="text-gradient">RagnaCore</span>
           </h1>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Conheça a nossa história, missão e os valores que nos impulsionam todos os dias.
