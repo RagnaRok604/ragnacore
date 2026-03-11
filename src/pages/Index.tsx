@@ -5,9 +5,9 @@ import Layout from "@/components/Layout";
 import ServicesCarousel from "@/components/ServicesCarousel";
 import PartnersSection from "@/components/PartnersSection";
 
-import imgWebsite from "@/assets/project-website.jpg";
-import imgNetwork from "@/assets/project-network.jpg";
-import imgSecurity from "@/assets/project-security.jpg";
+import imgLogo from "@/assets/ragnacore-logo.png";
+import imgErp from "@/assets/erp-dashboard.png";
+import imgCallcenter from "@/assets/project-pbx-yeastar.jpg";
 
 const services = [
   { icon: Globe, title: "Criação de Websites", desc: "Criamos websites para sua empresa, desde sites simples até plataformas complexas com as melhores tecnologias." },
