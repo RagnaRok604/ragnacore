@@ -99,9 +99,9 @@ const Index = () => (
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
-            { img: imgWebsite, title: "Sobre a RagnaCore", desc: "A RagnaCore é uma empresa Moçambicana especializada em soluções tecnológicas completas para empresas e residências.", link: "/sobre" },
+            { img: imgErp, title: "Sobre a RagnaCore", desc: "A RagnaCore é uma empresa Moçambicana especializada em soluções tecnológicas completas para empresas e residências.", link: "/sobre" },
             { img: imgNetwork, title: "Nossos Serviços", desc: "Conheça todos os nossos serviços — desde criação de websites até infraestrutura de redes e segurança eletrónica.", link: "/servicos" },
-            { img: imgSecurity, title: "Nossos Projetos", desc: "Veja os projetos que entregamos com sucesso e a qualidade que define cada solução RagnaCore.", link: "/projetos" },
+            { img: imgEcommerce, title: "Nossos Projetos", desc: "Veja os projetos que entregamos com sucesso e a qualidade que define cada solução RagnaCore.", link: "/projetos" },
           ].map((card, i) => (
             <motion.div key={card.title} custom={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
               <Link to={card.link} className="group block bg-card rounded-xl overflow-hidden shadow-card hover:shadow-glow transition-shadow border border-border">
