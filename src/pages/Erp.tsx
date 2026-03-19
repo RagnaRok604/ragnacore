@@ -82,8 +82,8 @@ const plans = [
     price: "4 500",
     promoPrice: "3 150",
     desc: "Pacote básico para pequenas empresas",
-    users: "2", companies: "1", products: "10 000", storage: "1024 MB",
-    features: ["Vendas", "Recebimentos", "Gestão de Artigos", "Relatório Clientes", "Relatório Operacional", "Relatórios", "Extratos"],
+    users: "2", companies: "1", products: "Ilimitado", storage: "1024 MB",
+    features: ["Vendas", "Recebimentos", "Gestão de Artigos", "Relatório de Clientes", "Relatório Operacional", "Extratos"],
     cta: "https://cserp.cs.co.mz/checkout?pacote=BASIC_001",
   },
   {
@@ -91,9 +91,9 @@ const plans = [
     price: "9 500",
     promoPrice: "6 650",
     desc: "Pacote padrão para médias empresas",
-    users: "2", companies: "1", products: "100 000", storage: "5120 MB",
+    users: "2", companies: "1", products: "Ilimitado", storage: "5120 MB",
     popular: true,
-    features: ["Vendas", "Compras", "Inventários", "Recebimentos", "Pagamentos", "Adiantamentos", "Bancos", "Gestão de Artigos", "Gestão de Clientes", "Gestão de Fornecedores", "Relatório Financeiro", "Relatório Operacional", "Relatórios", "Extractos", "Extratos", "POS"],
+    features: ["Vendas", "Compras", "Inventários", "Recebimentos", "Pagamentos", "Adiantamentos", "Bancos", "Gestão de Artigos", "Gestão de Clientes", "Gestão de Fornecedores", "Relatório Financeiro", "Relatório Operacional", "Extratos", "POS"],
     cta: "https://cserp.cs.co.mz/checkout?pacote=STANDARD_001",
   },
   {
@@ -101,8 +101,8 @@ const plans = [
     price: "15 000",
     promoPrice: "10 500",
     desc: "Pacote premium para grandes empresas",
-    users: "2", companies: "1", products: "200 000", storage: "10240 MB",
-    features: ["Vendas", "Compras", "Despesas", "Gestão de Despesas", "Inventários", "Recebimentos", "Pagamentos", "Adiantamentos", "Bancos", "Gestão de Projectos", "Colaboradores", "Outros", "Gestão de Artigos", "Gestão de Clientes", "Gestão de Fornecedores", "Contabilidade", "Relatório Financeiro", "Relatório Operacional", "Relatórios", "Extractos", "Extratos", "POS"],
+    users: "2", companies: "1", products: "Ilimitado", storage: "10240 MB",
+    features: ["Vendas", "Compras", "Gestão de Despesas", "Inventários", "Recebimentos", "Pagamentos", "Adiantamentos", "Bancos", "Gestão de Projectos", "Colaboradores", "Gestão de Artigos", "Gestão de Clientes", "Gestão de Fornecedores", "Contabilidade", "Relatório Financeiro", "Relatório Operacional", "Extratos", "POS"],
     cta: "https://cserp.cs.co.mz/checkout?pacote=PREMIUM_001",
   },
   {
