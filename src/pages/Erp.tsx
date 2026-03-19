@@ -262,7 +262,7 @@ const Erp = () => {
             Oferecemos planos flexíveis que se adaptam ao tamanho e às necessidades específicas do seu negócio, com excelente custo-benefício.
           </p>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-4">
             {plans.map((plan, i) => (
               <motion.div
                 key={plan.name}
@@ -270,18 +270,18 @@ const Erp = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className={`relative bg-card rounded-xl border overflow-hidden text-left transition-shadow hover:shadow-glow ${
-                  plan.popular ? "border-primary shadow-glow" : "border-border"
+                className={`relative bg-card rounded-xl border text-left transition-shadow hover:shadow-glow ${
+                  plan.popular ? "border-primary border-2 shadow-glow ring-1 ring-primary/20" : "border-border"
                 }`}
               >
-                {!plan.custom && (
-                  <div className="bg-accent text-accent-foreground text-sm font-semibold text-center py-2 px-4 tracking-wide">
-                    30% de desconto no primeiro mês
+                {plan.popular && (
+                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 z-10 bg-primary text-primary-foreground text-xs font-bold px-5 py-1.5 rounded-full shadow-lg uppercase tracking-wider whitespace-nowrap">
+                    Mais Popular
                   </div>
                 )}
-                {plan.popular && !plan.custom && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-bold px-4 py-1.5 rounded-full shadow-lg uppercase tracking-wider">
-                    Mais Popular
+                {!plan.custom && (
+                  <div className="bg-accent text-accent-foreground text-sm font-semibold text-center py-2 px-4 tracking-wide rounded-t-xl">
+                    30% de desconto no primeiro mês
                   </div>
                 )}
                 <div className="p-6">
