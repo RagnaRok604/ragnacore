@@ -275,7 +275,7 @@ const Erp = () => {
                 }`}
               >
                 {plan.popular && (
-                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 z-10 bg-primary text-primary-foreground text-xs font-bold px-5 py-1.5 rounded-full shadow-lg uppercase tracking-wider whitespace-nowrap">
+                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 z-10 bg-gradient-to-r from-amber-500 to-orange-500 text-white text-xs font-bold px-5 py-1.5 rounded-full shadow-[0_4px_14px_rgba(245,158,11,0.5)] uppercase tracking-wider whitespace-nowrap animate-pulse">
                     Mais Popular
                   </div>
                 )}
