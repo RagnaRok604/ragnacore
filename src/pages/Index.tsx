@@ -10,14 +10,12 @@ import imgNetwork from "@/assets/project-network.jpg";
 import imgEcommerce from "@/assets/project-ecommerce.jpg";
 
 const services = [
-  { icon: Globe, title: "Criação de Websites", desc: "Criamos websites para sua empresa, desde sites simples até plataformas complexas com as melhores tecnologias." },
   { icon: Network, title: "Telecom & Infraestrutura", desc: "Centrais PBX, VoIP, call centers e infraestrutura de redes empresariais completa." },
   { icon: Server, title: "Domínio & Hospedagem", desc: "Registo de domínios e alojamento seguro com uptime de 99.9% e certificado SSL incluído." },
   { icon: BarChart3, title: "Sistemas de Gestão ERP", desc: "Software ERP completo para restaurantes, farmácias, bares, armazéns e mais." },
 ];
 
 const mainServices = [
-  { icon: Globe, title: "Criação de Websites", desc: "Desenvolvemos websites responsivos e modernos com as melhores práticas de UX/UI." },
   { icon: Server, title: "Domínio & Hospedagem", desc: "Alojamento fiável e seguro para o seu website com suporte técnico dedicado." },
   { icon: Network, title: "Telecom & Infraestrutura", desc: "Centrais PBX, VoIP, call centers e cabeamento estruturado para empresas." },
   { icon: Wifi, title: "Internet Residencial", desc: "Planos de internet fibra para residências com velocidade e estabilidade." },

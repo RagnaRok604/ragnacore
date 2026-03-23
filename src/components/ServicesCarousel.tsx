@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Globe, Server, Wifi, ArrowRight, Network, BarChart3 } from "lucide-react";
+import { Server, Wifi, ArrowRight, Network, BarChart3 } from "lucide-react";
 import { Link } from "react-router-dom";
 import {
   Carousel,
@@ -11,21 +11,12 @@ import {
 import Autoplay from "embla-carousel-autoplay";
 import { useRef } from "react";
 
-import imgWebsite from "@/assets/project-website.jpg";
 import imgNetwork from "@/assets/project-network.jpg";
-
 import imgEcommerce from "@/assets/project-ecommerce.jpg";
 import imgInternet from "@/assets/project-internet.jpg";
 import imgAlarm from "@/assets/project-alarm.jpg";
 
 const carouselSlides = [
-  {
-    icon: Globe,
-    title: "Criação de",
-    highlight: "Websites",
-    desc: "Criamos websites modernos e responsivos para o seu negócio, com as melhores tecnologias do mercado.",
-    image: imgWebsite,
-  },
   {
     icon: Network,
     title: "Telecomunicações &",

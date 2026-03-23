@@ -1,17 +1,11 @@
 import { motion } from "framer-motion";
-import { Globe, Server, Wifi, CheckCircle, Network, BarChart3, Zap, ArrowRight } from "lucide-react";
+import { Server, Wifi, CheckCircle, Network, BarChart3, Zap, ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
 import PartnersSection from "@/components/PartnersSection";
 
 const services = [
-  {
-    icon: Globe,
-    title: "Criação de Websites Profissionais",
-    desc: "Desenvolvemos websites modernos, responsivos e otimizados para motores de busca. Desde landing pages até plataformas complexas, garantimos um design que impressiona e converte visitantes em clientes.",
-    benefits: ["Design personalizado e moderno", "Totalmente responsivo (mobile, tablet, desktop)", "Otimização SEO integrada", "Carregamento rápido e seguro"],
-  },
   {
     icon: Server,
     title: "Venda de Domínio e Hospedagem",

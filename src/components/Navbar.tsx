@@ -1,11 +1,10 @@
 import { useState, useRef, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, MapPin, Clock, Phone, ChevronDown, Globe, Server, Wifi, Network, BarChart3 } from "lucide-react";
+import { Menu, X, MapPin, Clock, Phone, ChevronDown, Server, Wifi, Network, BarChart3 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "@/assets/ragnacore-logo.png";
 
 const serviceItems = [
-  { icon: Globe, label: "Criação de Websites", to: "/servicos" },
   { icon: Server, label: "Domínio & Hospedagem", to: "/servicos" },
   { icon: Network, label: "Telecomunicações & Infraestrutura", to: "/servicos" },
   { icon: Wifi, label: "Internet Residencial", to: "/servicos" },
