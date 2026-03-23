@@ -10,7 +10,6 @@ import imgNetwork from "@/assets/project-network.jpg";
 import imgEcommerce from "@/assets/project-ecommerce.jpg";
 
 const services = [
-  { icon: Globe, title: "Criação de Websites", desc: "Criamos websites para sua empresa, desde sites simples até plataformas complexas com as melhores tecnologias." },
   { icon: Network, title: "Telecom & Infraestrutura", desc: "Centrais PBX, VoIP, call centers e infraestrutura de redes empresariais completa." },
   { icon: Server, title: "Domínio & Hospedagem", desc: "Registo de domínios e alojamento seguro com uptime de 99.9% e certificado SSL incluído." },
   { icon: BarChart3, title: "Sistemas de Gestão ERP", desc: "Software ERP completo para restaurantes, farmácias, bares, armazéns e mais." },
