@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Globe, Server, Wifi, ArrowRight, Network, BarChart3 } from "lucide-react";
+import { Server, Wifi, ArrowRight, Network, BarChart3 } from "lucide-react";
 import { Link } from "react-router-dom";
 import {
   Carousel,
