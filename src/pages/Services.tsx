@@ -7,12 +7,6 @@ import PartnersSection from "@/components/PartnersSection";
 
 const services = [
   {
-    icon: Globe,
-    title: "Criação de Websites Profissionais",
-    desc: "Desenvolvemos websites modernos, responsivos e otimizados para motores de busca. Desde landing pages até plataformas complexas, garantimos um design que impressiona e converte visitantes em clientes.",
-    benefits: ["Design personalizado e moderno", "Totalmente responsivo (mobile, tablet, desktop)", "Otimização SEO integrada", "Carregamento rápido e seguro"],
-  },
-  {
     icon: Server,
     title: "Venda de Domínio e Hospedagem",
     desc: "Oferecemos registo de domínios e planos de hospedagem seguros e fiáveis. Com servidores de alto desempenho, o seu site estará sempre online e protegido.",

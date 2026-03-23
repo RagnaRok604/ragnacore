@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import logo from "@/assets/ragnacore-logo.png";
 
 const serviceItems = [
-  { icon: Globe, label: "Criação de Websites", to: "/servicos" },
   { icon: Server, label: "Domínio & Hospedagem", to: "/servicos" },
   { icon: Network, label: "Telecomunicações & Infraestrutura", to: "/servicos" },
   { icon: Wifi, label: "Internet Residencial", to: "/servicos" },

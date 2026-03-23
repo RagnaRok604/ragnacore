@@ -16,7 +16,6 @@ const services = [
 ];
 
 const mainServices = [
-  { icon: Globe, title: "Criação de Websites", desc: "Desenvolvemos websites responsivos e modernos com as melhores práticas de UX/UI." },
   { icon: Server, title: "Domínio & Hospedagem", desc: "Alojamento fiável e seguro para o seu website com suporte técnico dedicado." },
   { icon: Network, title: "Telecom & Infraestrutura", desc: "Centrais PBX, VoIP, call centers e cabeamento estruturado para empresas." },
   { icon: Wifi, title: "Internet Residencial", desc: "Planos de internet fibra para residências com velocidade e estabilidade." },
